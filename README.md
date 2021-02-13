@@ -1,2 +1,2 @@
 # github.io-423-culture
-website for 
+Website for VUW psych 423: Culture and Social Behaviour
