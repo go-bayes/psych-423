@@ -1,0 +1,36 @@
+[
+  {
+    "path": "posts/Week_2_Evolutionary_Psychology/",
+    "title": "Evolutionary Psychology",
+    "description": "Evolutionary Psychology",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-03-04",
+    "categories": [],
+    "contents": "\n\nContents\nCulture and evolution\nKey Concepts\nReadings\n\nCulture and evolution\n\n\n\n\n\nKey Concepts\nReadings\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-14T12:15:44+13:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/Week_1_Introduction/",
+    "title": "Introduction",
+    "description": "An introduction to the course",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-02-25",
+    "categories": [],
+    "contents": "\n\nContents\nWhat is culture?\nWhat is evolution?\nWhy combine culture and evolution?\nWhat will I be doing in this course?\nHow will I be assessed?\nHow will this course benefit me?\nSlide deck\nKey Concepts\nReadings\n\nWhat is culture?\nWhat is evolution?\nWhy combine culture and evolution?\nWhat will I be doing in this course?\nHow will I be assessed?\nHow will this course benefit me?\nSlide deck\nClick here to go to the slide deck.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\nKey Concepts\nReadings\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-14T12:16:48+13:00",
+    "input_file": {}
+  }
+]

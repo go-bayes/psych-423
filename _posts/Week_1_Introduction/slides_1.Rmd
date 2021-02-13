@@ -1,0 +1,47 @@
+---
+title: "Introduction"
+subtitle: "What, When, How?"
+author: "Joseph Bulbulia, Victoria University"
+date: "2021-24-02"
+output: 
+  ioslides_presentation:
+    incremental: true
+    transition: 0
+    smaller: true
+---
+
+```{r setup, include=FALSE}
+# Packages
+library(scales)
+library(here)
+library(knitr)
+library(kableExtra)
+library(ggdist)
+library(bayesplot)
+library(tidyverse)
+# knitr chunk options
+opts_chunk$set(
+  echo = FALSE, 
+  cache = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  dev = "svg",
+  fig.align = 'center'
+  )
+# Bayesplot color theme
+color_scheme_set("darkgray")
+```
+
+## What?
+ - This
+ - That
+ - The Other
+ 
+## When? {.build}
+ - This 
+ - That
+
+
+## How?
+- This
+- That

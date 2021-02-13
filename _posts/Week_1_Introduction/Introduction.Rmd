@@ -1,0 +1,56 @@
+---
+title: "Introduction"
+description: |
+  An introduction to the course
+author:
+  - name: Joseph Bulbulia
+    url: https://josephbulbulia.netlify.app
+    affiliation: Victoria University of Wellington
+    affiliation_url: https://www.wgtn.ac.nz
+    orcid_id: 0000-0002-5861-2056
+date: 2021-FEB-25
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, cache = TRUE, fig.align = 'center'
+)
+```
+
+## What is culture?
+
+## What is evolution? 
+
+## Why combine culture and evolution? 
+
+## What will I be doing in this course? 
+
+## How will I be assessed?
+
+## How will this course benefit me? 
+
+
+## Slide deck
+
+Click [here](slides_1.html) to go to the slide deck.
+
+```{r embed-xaringan, layout="l-body-outset"}
+xaringanExtra::embed_xaringan(url = "slides_1.html", ratio = "4:3")
+```
+
+
+## Key Concepts
+
+
+## Readings
+
+
+
+
+

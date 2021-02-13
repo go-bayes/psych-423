@@ -1,0 +1,28 @@
+---
+title: "VUW Psych 423: Culture and Social Behavior"
+author:
+  - name: Joseph Bulbulia
+    url: https://josephbulbulia.netlify.app
+    affiliation: Victoria University of Wellington
+    affiliation_url: https://www.wgtn.ac.nz
+    orcid_id: https://orcid.org/0000-0002-5861-2056
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Overview of assessments
+
+### Seminar presentation
+ 
+### Weekly "workbooks" 
+
+### Article Reviews
+
+### Project
+
+The course culminates with an in-depth project in which students work on data from their own area of interest.
+
+

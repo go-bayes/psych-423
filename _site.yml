@@ -1,0 +1,35 @@
+name: "vuw_psych_423_culture"
+title: "VUW Psych 423: Culture and Social Behaviour"
+description: |
+  VUW Psych 423: Culture and Social Behaviour
+output_dir: "docs"
+base_url: https://vuw-psych-447.netlify.app/
+repository_url: https://github.com/go-bayes/github.io-447-culture
+creative_commons: CC BY
+google_analytics: "G-X058WW5WJZ"
+twitter:
+  site: "@go_bayes"
+  creator: "@go_bayes"
+collections:
+  posts:
+    feed_item_max: false
+    custom: _custom.html
+navbar:
+  source_url: https://github.com/go-bayes/github.io-423-culture
+  search: true
+  left:
+    - text: "About"
+      href: about.html
+    - text: "Coures Materials"
+      href: index.html
+    - text: "Assessments"
+      href: assessments.html
+output:
+  distill::distill_article:
+    toc: yes
+    toc_level: 1
+
+
+
+
+
