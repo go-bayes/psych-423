@@ -1,4 +1,4 @@
-*.Rproj.user
+.Rproj.user
 .Rproj
 .Rhistory
 .RData
@@ -8,4 +8,3 @@
 *models/
 _posts/**/*.html
 _posts/**/*_files/
-.Rproj.user
