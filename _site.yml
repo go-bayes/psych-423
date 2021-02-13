@@ -3,8 +3,8 @@ title: "VUW Psych 423: Culture and Social Behaviour"
 description: |
   VUW Psych 423: Culture and Social Behaviour
 output_dir: "docs"
-base_url: https://vuw-psych-447.netlify.app/
-repository_url: https://github.com/go-bayes/github.io-447-culture
+base_url: https://github.com/go-bayes/github.io-423-culture
+repository_url: https://github.com/go-bayes/github.io-423-culture
 creative_commons: CC BY
 google_analytics: "G-X058WW5WJZ"
 twitter:
