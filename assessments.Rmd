@@ -21,6 +21,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### Article Reviews
 
+Click [here](templates/template_review.html) for a template.
+Click [here](templates/template_review.Rmd) for the Rmd template.
+
 ### Project
 
 The course culminates with an in-depth project in which students work on data from their own area of interest.

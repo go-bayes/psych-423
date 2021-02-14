@@ -1,18 +1,6 @@
 {
   "articles": [
     {
-      "path": "about.html",
-      "title": "VUW Psych 423: Culture and Social Behaviour",
-      "author": [
-        {
-          "name": "Joseph Bulbulia",
-          "url": "https://josephbulbulia.netlify.app"
-        }
-      ],
-      "contents": "\nThis course examines social psychology from a cross-cultural perspective. To what extent is social behaviour different or the same across the world? What theories can we use to understand the thoughts, feelings, actions, and beliefs of people across cultures? Emphasis is on such basic social processes as construction of identity and personality, dimensions of cultural variation, and intergroup harmony and conflict. Issues towards developing cross-cultural competence are considered, with an eye towards establishing better practices for the evolving population of Aotearoa/New Zealand.\nThis year, we will use religion as a lens within which to view patterns of cultural variation and similar. From the healing rituals of the Kung people in southern Africa, to the human sacrificial rituals of the Aztecs, to the liberating speeches of Martin Luther King, human spirituality is both diverse and powerful. What explains the near universality of religion? What explains its diversity of forms? Are religions like typewriters, once useful but now obsolete? Or will religions remain vital for humanity’s future.\nHere, we investigate these questions from the perspective of human bio-cultural evolution.\nHaving acquired an in-depth understanding of leading debates in the study of religious culture and social behavior, you will have the opportunity to develop an independent research project on religion or another aspect of human culture such as art, music, family, sexuality, war, property, finance, or another area, as suits your interests.\n\n\n\n",
-      "last_modified": "2021-02-14T12:27:02+13:00"
-    },
-    {
       "path": "assessments.html",
       "title": "VUW Psych 423: Culture and Social Behavior",
       "author": [
@@ -21,15 +9,8 @@
           "url": "https://josephbulbulia.netlify.app"
         }
       ],
-      "contents": "\n\nContents\nOverview of assessmentsSeminar presentation\nWeekly “workbooks”\nArticle Reviews\nProject\n\n\nOverview of assessments\nSeminar presentation\nWeekly “workbooks”\nArticle Reviews\nProject\nThe course culminates with an in-depth project in which students work on data from their own area of interest.\n\n\n\n",
-      "last_modified": "2021-02-14T12:11:57+13:00"
-    },
-    {
-      "path": "index.html",
-      "title": "VUW Psych 423: Culture and Social Behaviour",
-      "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-02-14T12:28:38+13:00"
+      "contents": "\n\nContents\nOverview of assessmentsSeminar presentation\nWeekly “workbooks”\nArticle Reviews\nProject\n\n\nOverview of assessments\nSeminar presentation\nWeekly “workbooks”\nArticle Reviews\nClick here for a template. Click here for the Rmd template.\nProject\nThe course culminates with an in-depth project in which students work on data from their own area of interest.\n\n\n\n",
+      "last_modified": "2021-02-14T13:45:11+13:00"
     }
   ],
   "collections": ["posts/posts.json"]

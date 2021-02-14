@@ -18,6 +18,7 @@ file.create("docs/.nojekyll", showWarnings = FALSE)
 # Ensure directories exist
 dir.create("data", FALSE)
 dir.create("models", FALSE)
+dir.create("templates", FALSE)
 ```
 
 ```{r render-everything, include = FALSE, eval = FALSE}

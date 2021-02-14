@@ -9,6 +9,6 @@
 _posts/**/*.html
 _posts/**/*_files/
 *.Rproj
-_docs/templates/*template_review_files/
+_docs/templates/template_review_files/*
 _docs/templates/**/*.html
 _posts/**/*_files/
