@@ -6,9 +6,10 @@
 *data/
 *_cache/
 *models/
+*templates/template_review_files/
 _posts/**/*.html
 _posts/**/*_files/
 *.Rproj
-_docs/templates/template_review_files/*
-_docs/templates/**/*.html
+docs/templates/template_review_files/*
+docs/templates/**/*.html
 _posts/**/*_files/
