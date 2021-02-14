@@ -13,4 +13,7 @@ _posts/**/*_files/
 docs/templates/template_review_files/*
 docs/templates/**/*.html
 _posts/**/*_files/
-docs/templates/template_grant_files/*
+docs/templates/template_grant_files/
+templates/template_grant_files/*
+*.xlsx
+*template_budget
