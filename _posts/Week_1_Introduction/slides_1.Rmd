@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-subtitle: "What, When, How?"
+subtitle: "Course essentials"
 author: "Joseph Bulbulia, Victoria University"
 date: "2021-24-02"
 output: 

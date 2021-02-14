@@ -16,17 +16,18 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Overview of assessments
 
 
-### 5 x Peer Review Article Reports: 50%
+### 4 x Peer Review Article Reports: 40%
 
 Click [here](templates/template_review.html) for a template.
 Click [here](templates/template_review.Rmd) for the Rmd template.
 
-### 1 x Seminar Presentation: 10%
+
+### 1 x Seminar Presentation: 20%
 
 In which you lead the class discussion by presenting your peer review article report. 
 
 
-### 1 x The Grant Proposal: 30%
+### 1 x The Grant Proposal: 40%
 
 The course culminates with an in-depth project called "The Grant Proposal" in which students develop a research plan following the Heilmeier Catechism.
 
