@@ -25,15 +25,44 @@ knitr::opts_chunk$set(
 
 ## What is culture?
 
+We define culture in a broadly to socially transmitted and acquired information information that affects and enables human cognition and behavior. That's not perfect. For example, its clear that birds, chimps, and other organisms have culture, however, this definition makes a start. 
+
 ## What is evolution? 
+
+We define evolution as a process by which design accumulates in living systems under the following conditions: 
+
+  1. Variation within a population
+  2. Competition among variants 
+  3. Inheritance such that there is a faithful transmission to "children" of "parental" traits.
+  
+Here too, we an approximate definition to make a start. 
+  
 
 ## Why combine culture and evolution? 
 
+When defining evolution we used shutter quotes for "children" and "parents" because evolution is not restricted to biological inheritance. There are evolutionary patterns at the level of culture. 
+
+There are three main benefits for combining culture and evolution:
+
+  1. to clarify otherwise bewildering cultural diversity;
+  2. to unlock wisdom in culturally inherited systems;
+  3. to  avoid to cultural evolved inequality.   
+
 ## What will I be doing in this course? 
 
-## How will I be assessed?
+Expectations:
+
+  1. You'll participate in seminars (which means attending).
+  2. You'll lead a seminar discussion
+  3. You'll write 4 x peer review reports
+  4. You'll develop a "grant proposal" for conducting cultural evolutionary research. 
 
 ## How will this course benefit me? 
+
+  1. Knowledge of cultural evolutionary theory and research
+  2. Presentation skills
+  2. Critical sympathetic writing.
+  3. Skills for organising a research idea, and pitching it to a potential funder.
 
 
 ## Slide deck
@@ -44,12 +73,13 @@ Click [here](slides_1.html) to go to the slide deck.
 xaringanExtra::embed_xaringan(url = "slides_1.html", ratio = "4:3")
 ```
 
+## Help
 
-## Key Concepts
-
+You can email me for an appointment at: joseph.bulbulia@vuw.ac.nz or drop by my office hours: [here](https://josephbulbulia.netlify.app/)
 
 ## Readings
 
+Visit [D-PlACE](https://d-place.org/)
 
 
 

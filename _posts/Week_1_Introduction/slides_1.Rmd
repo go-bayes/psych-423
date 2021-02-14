@@ -32,16 +32,41 @@ opts_chunk$set(
 color_scheme_set("darkgray")
 ```
 
-## What?
- - This
- - That
- - The Other
- 
-## When? {.build}
- - This 
- - That
+
+## What is culture?
+
+We define culture in a broadly to socially transmitted and acquired information information that affects and enables human cognition and behavior. That's not perfect. For example, its clear that birds, chimps, and other organisms have culture, however, this definition makes a start. 
+
+## What is evolution? 
+
+  1. Variation within a population
+  2. Competition among variants 
+  3. Inheritance such that there is a faithful transmission to "children" of "parental" traits.
+  
+
+## Why combine culture and evolution? 
 
 
-## How?
-- This
-- That
+  1. to clarify otherwise bewildering cultural diversity;
+  2. to unlock wisdom in culturally inherited systems;
+  3. to  avoid to cultural evolved inequality.   
+
+## What will I be doing in this course? 
+
+Expectations:
+
+  1. Seminars x 12.
+  2. Lead 1 x seminar
+  3. 4 x peer review reports (see assessments)
+  4. 1 x "grant proposal"  (see assessments) 
+
+## How will this course benefit me? 
+
+  1. Knowledge of theory and research
+  2. Presentation skills
+  3. Effective review writing
+  4. Research design and grant-writing.
+  
+## Help
+
+joseph.bulbulia@vuw.ac.nz
