@@ -9,3 +9,6 @@
 _posts/**/*.html
 _posts/**/*_files/
 *.Rproj
+_docs/templates/**/_files
+_docs/templates/**/*.html
+_posts/**/*_files/
