@@ -1,5 +1,149 @@
 [
   {
+    "path": "posts/Week11_New_Zealand/",
+    "title": "Religious Diversity in New Zealand",
+    "description": "Variation within and between religious groups",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-05-20",
+    "categories": [],
+    "contents": "\n\nContents\nCultural evolution of religions\n\nCultural evolution of religions\n\n\n\n\n\n\n",
+    "preview": "posts/Week11_New_Zealand/f.png",
+    "last_modified": "2021-02-15T18:39:54+13:00",
+    "input_file": {},
+    "preview_width": 4800,
+    "preview_height": 3600
+  },
+  {
+    "path": "posts/Week12_Wrap_Up/",
+    "title": "Wrap up",
+    "description": "Discussion and student projects",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-05-20",
+    "categories": [],
+    "contents": "\n\nContents\nReligious Change in New Zealand is a Simpson’s Paradox\n\nReligious Change in New Zealand is a Simpson’s Paradox\n\n\n\n\n\n\n",
+    "preview": "posts/Week12_Wrap_Up/simpar.jpg",
+    "last_modified": "2021-02-15T18:39:20+13:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/Week_9_Atheism/",
+    "title": "Atheism",
+    "description": "Causes and consequences of atheism",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-05-06",
+    "categories": [],
+    "contents": "\n\nContents\nCultural evolution of atheism\n\nCultural evolution of atheism\n\n\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-15T18:33:37+13:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/Week_8_Gods/",
+    "title": "Gods Minds",
+    "description": "Cultural variation in Gods",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-04-29",
+    "categories": [],
+    "contents": "\n\nContents\nVariation in Gods\n\nVariation in Gods\n\n\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-15T18:36:27+13:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/Week10_Ecology_Beliefs/",
+    "title": "Ecology of Religious Beliefs",
+    "description": "How does nature shape religions?",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-04-29",
+    "categories": [],
+    "contents": "\n\nContents\nEcology of Religious Beliefs\n\nEcology of Religious Beliefs\n\n\n\n\n\n\n",
+    "preview": "posts/Week10_Ecology_Beliefs/f1.jpg",
+    "last_modified": "2021-02-15T18:34:58+13:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/Week_7_Reproduction/",
+    "title": "Reproduction",
+    "description": "Religion as a Reproductive Strategy",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-04-23",
+    "categories": [],
+    "contents": "\n\nContents\nReligion as a mating strategy\n\nReligion as a mating strategy\n\n\n\n\n\n\n",
+    "preview": "posts/Week_7_Reproduction/f1.png",
+    "last_modified": "2021-02-15T18:34:20+13:00",
+    "input_file": {},
+    "preview_width": 2750,
+    "preview_height": 3683
+  },
+  {
+    "path": "posts/Week_6_Cultural_Evolution/",
+    "title": "Cultural Evolution",
+    "description": "Religions on the tree of life",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-04-02",
+    "categories": [],
+    "contents": "\n\nContents\nCultural evolution of religions\n\nCultural evolution of religions\n\n\n\n\n\n\n",
+    "preview": "posts/Week_6_Cultural_Evolution/f1.png",
+    "last_modified": "2021-02-15T18:14:13+13:00",
+    "input_file": {},
+    "preview_width": 7816,
+    "preview_height": 6233
+  },
+  {
+    "path": "posts/Week_5_Rituals/",
+    "title": "Rituals in Vivo",
+    "description": "Rituals in vivo",
+    "author": [
+      {
+        "name": "Joseph Bulbulia",
+        "url": "https://josephbulbulia.netlify.app"
+      }
+    ],
+    "date": "2021-03-26",
+    "categories": [],
+    "contents": "\n\nContents\nRituals\n\nRituals\n\n\n\n\n\n\n",
+    "preview": "posts/Week_5_Rituals/f.png",
+    "last_modified": "2021-02-15T18:34:35+13:00",
+    "input_file": {},
+    "preview_width": 800,
+    "preview_height": 600
+  },
+  {
     "path": "posts/Week_4_Sacrifice/",
     "title": "Sacrifice",
     "description": "The Evolution of Religious Sacrifice",
@@ -13,7 +157,7 @@
     "categories": [],
     "contents": "\n\nContents\nHow did religious sacrifice evolve?\n\nHow did religious sacrifice evolve?\n\n\n\n\n\n\n",
     "preview": "posts/Week_4_Sacrifice/f1.png",
-    "last_modified": "2021-02-15T17:53:38+13:00",
+    "last_modified": "2021-02-15T18:34:47+13:00",
     "input_file": {},
     "preview_width": 4958,
     "preview_height": 7016

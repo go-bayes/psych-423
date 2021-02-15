@@ -5,6 +5,16 @@ listing:
   posts:
     - Week_1_Introduction
     - Week_2_Evolutionary_Psychology
+    - Week_3_Development
+    - Week_4_Sacrifice
+    - Week_5_Rituals
+    - Week_6_Cultural_Evolution
+    - Week_7_Reproduction
+    - Week_8_Gods
+    - Week_9_Atheism
+    - Week10_Ecology_Beliefs
+    - Week11_New_Zealand
+    - Week12_Wrap_Up
 ---
 
 ```{r setup, include=FALSE}
@@ -20,6 +30,25 @@ dir.create("data", FALSE)
 dir.create("models", FALSE)
 dir.create("templates", FALSE)
 ```
+
+<!-- ```{r render-everything, include = FALSE, eval = FALSE} -->
+<!-- # Use to render all posts (article and slide deck) if needed -->
+<!-- library(rmarkdown) -->
+<!-- posts <- list.files( -->
+<!--   "_posts", recursive = TRUE, pattern = ".Rmd", full.names = TRUE -->
+<!--   ) -->
+<!-- purrr::walk(posts, render) -->
+<!-- ``` -->
+
+
+<!-- ```{r render-everything_templates, include = FALSE, eval = FALSE} -->
+<!-- # Use to render all posts (article and slide deck) if needed -->
+<!-- library(rmarkdown) -->
+<!-- posts <- list.files( -->
+<!--   "template_review_files", recursive = TRUE, pattern = ".Rmd", full.names = TRUE -->
+<!--   ) -->
+<!-- purrr::walk(template_review_files, render) -->
+<!-- ``` -->
 
 ```{r render-everything, include = FALSE, eval = FALSE}
 # Use to render all posts (article and slide deck) if needed

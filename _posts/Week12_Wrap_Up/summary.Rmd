@@ -1,0 +1,32 @@
+---
+title: "Wrap up"
+description: |
+ Discussion and student projects
+author:
+  - name: Joseph Bulbulia
+    url: https://josephbulbulia.netlify.app
+    affiliation: Victoria University of Wellington
+    affiliation_url: https://www.wgtn.ac.nz
+    orcid_id: 0000-0002-5861-2056
+date: 2021-MAY-20
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, cache = TRUE, fig.align = 'center'
+)
+```
+
+## Religious Change in New Zealand is a Simpson's Paradox
+
+
+
+```{r echo=F}
+knitr::include_graphics("simpar.jpg")
+```

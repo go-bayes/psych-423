@@ -26,6 +26,7 @@ knitr::opts_chunk$set(
 ## How did religious sacrifice evolve?
 
 
+
 ```{r maur1, echo=F}
 knitr::include_graphics("f1.png")
 ```

@@ -26,7 +26,7 @@ navbar:
 output:
   distill::distill_article:
     toc: yes
-    toc_level: 1
+    toc_level: 4
 
 
 
