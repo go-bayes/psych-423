@@ -40,20 +40,21 @@ In which you lead a class discussion by presenting your peer review article repo
 
 Any four of the following dates prior to class:
 
-
-  - MAR 5
-  - MAR 12
-  - MAR 19
-  - MAR 26
-  - APR 2
+  - ~~FEB 25~~
+  - MAR 4
+  - MAR 11
+  - MAR 18
+  - MAR 25
+  - APR 1
   - BREAK
-  - APR 23
+  - APR 22
   - APR 29
   - MAY 6
   - MAY 13
   - MAY 20
-  - MAY 27
-
+  - ~~MAY 27~~
+  - FINAL PROJECT DUE 31 MAY
+  
 ### 10 x Seminar Participation: 20%
 
 In which you:
