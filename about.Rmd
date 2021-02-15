@@ -10,18 +10,227 @@ author:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(here)
 ```
 
+## Class times and locations
+Thursdays: 9 AM in EA407 (Semester 1, 2021)
+
+## Names and contact details
+
+Course coordinator & Lecturer: Prof. Joseph Bulbulia 
+Email: joseph.bulbulia@vuw.ac.nz 
+
+Course admin support: Dr. Jiun Youn
+(Extension, technical issues and other housekeeping matters) 
+Email: jiun.youn@vuw.ac.nz
+
+
+
+## Course Description 
 
 This course examines social psychology from a cross-cultural perspective. To what extent is social behaviour different or the same across the world? What theories can we use to understand the thoughts, feelings, actions, and beliefs of people across cultures? Emphasis is on such basic social processes as construction of identity and personality, dimensions of cultural variation, and intergroup harmony and conflict. Issues towards developing cross-cultural competence are considered, with an eye towards establishing better practices for the evolving population of Aotearoa/New Zealand.  
 
 ## Religion as Window
 
+[see](https://uoa-eresearch.github.io/religion/churches.html)
+
+
 This year, we will use religion as a window through which to view patterns of cultural variation and similarity. 
 
-From the healing rituals of the Kung people in southern Africa, to the human sacrificial rituals of the Aztecs, to the liberating speeches of Martin Luther King, human spirituality is both diverse and powerful.  What explains the near universality of religion? What explains its diversity of forms? Are religions like typewriters, once useful but now obsolete?  Or will religions remain vital for humanity's future.  
+From the healing rituals of the Kung people in southern Africa, to the human sacrificial rituals of the Aztecs, to the liberating speeches of Martin Luther King, human spirituality is both diverse and powerful.  What explains the near universality of religion? What explains its diversity of forms? Are religions like typewriters, once useful but now obsolete?  Or will religions remain vital for humanity's future.   Here, we investigate these questions from the perspective of *cultural evolution*.
 
-We investigate these questions from the perspective of *cultural evolution*.
 
-Having acquired an in-depth understanding of leading debates in the study of religious culture and social behavior, you will have the opportunity to develop an independent research project on religion or another aspect of human culture such as art, music, family, sexuality, war, property, finance, or another area, as suits your interests. 
+## Communication of additional information and submissions
 
+Lectures will be posted to: https://go-bayes.github.io/psych-423/
+
+Course-Related notices will appear on VUW Blackboard
+
+Any information relating to Psyc 423 or any last-minute changes to the course will be posted on Blackboard. 
+
+Students must submit all written work to VUW Blackboard.
+
+## Important dates
+
+Trimester dates: 22 February to 20 June
+Teaching dates: 22 February to 28 May
+
+Mid-trimester break: 5 April to 18 April
+
+Last assessment item due: Final assessment (research proposal) will need to be submitted on 31st May (see [Assessments](https://go-bayes.github.io/psych-423/assessments.html))
+
+Study Examination/Assessment Period: 
+Note: students who enrol in courses with examinations must be able to attend an examination at the University at any time during the scheduled examination period.
+Withdrawal dates: Refer to [Withdrawing](www.victoria.ac.nz/home/admisenrol/payments/withdrawalsrefunds)
+If you cannot complete an assignment or sit a test or examination (aegrotats), refer to [Aegrotats](www.victoria.ac.nz/home/study/exams-and-assessments/aegrotat)
+
+## Teaching Format
+
+Psyc423 is a 15pt course which represents approx. 150 hours of total work for an average student.
+
+In-class time involves (approx. 22hrs):
+
+  1. Lectures by academic staff (typically Bulbulia): Lectures will introducing basic areas of knowledge, and will supplement the readings.
+
+  2. Class discussions. I expect students to read the assigned articles for the relevant week. To receive participation credit, students must attent seminar and submit a brief (~100 word) account of a thought, question, or insight that occurred to them during the class discussion.
+
+  3. The reports and "grant" assessments are described in [Assessments](https://go-bayes.github.io/psych-423/assessments.html))
+  
+  4. Note: this course has no tests or examinations.
+
+
+Out-of-class time involves (approx. 128hrs):
+
+1.	Reading articles before & following class.
+2.	Reading materials for the student presentations and writing response papers.
+3.	Research project readings & preparation
+4.	Research proposal writing
+
+
+## Mandatory course requirements 
+
+There are no Mandatory course requirements.
+
+## Workload
+
+Given that Psyc 423 is a 15 point course, the expected workload is no less than 150 hours in total. This would mean roughly 15 hours per week. This should be viewed as a minimum - how much you get out of this course will depend on the work you put in.
+
+## Penalties
+
+Students must turn in all assignments on time by due dates. If students do not turn in an essay or assignment at a designated time, they will receive a zero for assignment this will be counted toward the final grade. 
+
+
+## Materials and equipment and/or additional expenses
+
+You will not be needing any additional equipment or materials.
+
+## Recommended reading 
+
+Most of the material students will be expected to read is published in journals and to some extent in books. Students will need to read between two and five articles per week. Set readings will mostly be supplied throughout the course (please check relevant week in BlackBoard). However, students will also be required to conduct their own independent reviews of the literature for assignment purposes.
+
+## Other important information
+The information above is specific to this course.  There is other important information that students must familiarise themselves with, including:
+
+  - [Academic Integrity/Plagiarism](https://www.wgtn.ac.nz/students/support/student-interest-and-conflict-resolution/academic-integrity)
+  
+  - [Academic Progress](https://www.victoria.ac.nz/students/study/progress/academic-progess)
+  
+  - [Dates and deadlines](https://www.victoria.ac.nz/students/study/dates) 
+  
+  - [Faculty of Science Student and Academic Services Office](https://www.victoria.ac.nz/science/student-administration) 
+  
+  - [Grades](https://www.victoria.ac.nz/students/study/progress/grades) 
+  
+  - Special passes Refer to the [Assessment Handbook](https://www.victoria.ac.nz/documents/policy/staff-policy/assessment-handbook.pdf) 
+  - [Statutes and policies](https://www.victoria.ac.nz/about/governance/strategy)
+  
+  - [Student support](https://www.victoria.ac.nz/students/support)
+  
+  - [Students with disabilities](https://www.victoria.ac.nz/st_services/disability/) 
+  
+  - [Student Charter](https://www.wgtn.ac.nz/learning-teaching/partnership/student-charter) 
+  
+  - [Terms and Conditions](https://www.wgtn.ac.nz/study/apply-enrol/terms-conditions/student-contract) 
+  
+  - [Turnitin](https://www.cad.vuw.ac.nz/wiki/index.php/Turnitin) 
+  
+  - [University structure](https://www.victoria.ac.nz/about/governance/structure) 
+  
+  - [VUWSA](https://www.vuwsa.org.nz)
+  
+## Topics and Readings
+
+## Week 1:  Overview
+
+## Week 2: Evolutionary Psychology
+
+Cosmides, Leda, and John Tooby. "Evolutionary psychology: A primer." (1997).
+[Website:](http://www.cep.ucsb.edu/primer.html)
+
+Steven Mithen’s very brief review from an archaeological perspective (3 pages): Mithen, S. (1997). The Adapted Mind: Evolutionary Psychology and the Generation of Culture.[PDF](https://www.dropbox.com/s/7wbd688uyfp0cu2/Mithen-1997_Reviewed-Work-The-Adapted-Mind-Evolutionary-Psychology.pdf?dl=0)
+
+Guthrie, Stewart. "Spiritual beings: A Darwinian, cognitive account." Bulbulia et al., eds., Evolution of Religion (2008): 239-245. [PDF](https://www.dropbox.com/s/8xn1tnm0vqizdar/Guthrie2008.pdf?dl=0)
+
+## Week 3 Development
+
+Kelemen, Deborah. "Are children “intuitive theists”? Reasoning about purpose and design in nature." Psychological Science 15, no. 5 (2004): 295-301. [PDF](https://www.dropbox.com/s/31kvfyx9jxkypnr/2004.KELEMEN.INTUITIVE.THEISM.pdf?dl=0)
+
+Harris, Paul L., and Melissa A. Koenig. "Trust in testimony: How children learn about science and religion." Child development 77, no. 3 (2006): 505-524. [PDF](https://www.dropbox.com/s/e3bttnc142wgbvz/Harris_et_al-2006-Child_Development.pdf?dl=0)
+
+Bloom, P. (2007). Religion is natural. Developmental science, 10(1), 147-151. 
+[PDF](https://www.dropbox.com/s/mwke5mgtqmzneoy/BLOOM_Religion.pdf?dl=0)
+ 
+
+## Week 4: Evolution of sacrifice 
+
+Bulbulia, Joseph. "Religious costs as adaptations that signal altruistic intention." Evolution and Cognition 10, no. 1 (2004): 19-38. [PDF](https://www.dropbox.com/s/whqhjrdk0od18lp/COSTSADAPT.pdf?dl=0)
+
+Sosis, R., & Bressler, E. R. (2003). Cooperation and commune longevity: A test of the costly signalling theory of religion. Cross-cultural research, 37(2), 211-239. [PDF](https://www.dropbox.com/s/22t4mw5mg3l5kc2/Sosis-Bressler-2003_Cooperation-and-commune-longetivity.pdf?dl=0)
+
+Sosis, R., Kress, H. C., & Boster, J. S. (2007). Scars for war: Evaluating alternative signaling explanations for cross-cultural variance in ritual costs. Evolution and Human Behavior, 28(4), 234-247. [PDF](https://www.dropbox.com/s/i6c978wgm8y4x7j/2007-Scars-for-War.pdf?dl=0)
+
+Sosis, R. (2009). The adaptationist-byproduct debate on the evolution of religion: Five misunderstandings of the adaptationist program. Journal of Cognition and Culture, 9(3-4), 315-332. [PDF](https://www.dropbox.com/s/p693bdwirsuno7s/Sosis-2009_The-Adaptationist-Byproduct-Debate-on-the-Evolution-of-Religion.pdf?dl=0)
+
+
+## Week 5: Rituals in context 
+
+Xygalatas, P. Mitkidis, R. Fischer, P. Reddish, J. Skewes, A. W. Geertz, A. Roepstorff, and J. Bulbulia. Extreme rituals promote prosociality. Psychological Science, 2013 [PDF](https://www.dropbox.com/s/zkp3eijrb0syh3t/Psychological%20Science-2013-Xygalatas-0956797612472910.pdf?dl=0)
+
+ 
+Power, E. A. (2018). Collective ritual and social support networks in rural South India. Proceedings of the Royal Society B: Biological Sciences, 285(1879), 20180023.[PDF](https://www.dropbox.com/s/ud27zvxn6ui2g3d/Power-2018_Collective-ritual-and-social-support.pdf?dl=0)
+
+
+## Week 6:  Cultural evolution of religions in the Pacific
+
+Bulbulia, J., Geertz, A., Atkinson, Q., Cohen, E., Evans, N., Francois, P., ... & Wilson, D. (2013). The cultural evolution of religion. Cultural evolution: Society, technology, language, and religion. Vol. 12. MIT Press, 2013. [PDF](https://www.dropbox.com/s/l3u5pxeam6f79xf/Bulbulia-etal-2013_The-Cultural-Evolution-of-Religion.pdf?dl=0)
+
+Watts, J., Sheehan, O., Bulbulia, J., Gray, R. D., & Atkinson, Q. D. (2018). Christianity spread faster in small, politically structured societies. Nature human behaviour, 2(8), 559-564.[link](https://www.nature.com/articles/s41562-018-0379-3)
+
+Watts, J., Sheehan, O., Atkinson, Q. D., Bulbulia, J., & Gray, R. D. (2016). Ritual human sacrifice promoted and sustained the evolution of stratified societies. Nature, 532(7598), 228. [link](https://www.nature.com/articles/nature17159)
+
+ 
+
+## Week 7: Religion as a reproductive strategy
+
+Weeden, J., Cohen, A. B., & Kenrick, D. T. (2008). Religious attendance as reproductive support. Evolution and Human Behavior, 29(5), 327-334. [PDF](https://www.dropbox.com/s/4ci1h4fwlurq5xq/Weeden_Feritility.pdf?dl=0)
+
+
+Blume, Michael. "The reproductive benefits of religious affiliation." In The biological evolution of religious mind and behavior, pp. 117-126. Springer Berlin Heidelberg, 2009. [PDF](https://www.dropbox.com/s/5yzz4iq8r41mmy7/blume.pdf?dl=0)
+
+Shaver, J. H., Power, E. A., Purzycki, B. G., Watts, J., Sear, R., Shenk, M. K., ... & Bulbulia, J. A. (2020). Church attendance and alloparenting: an analysis of fertility, social support and child development among English mothers. Philosophical Transactions of the Royal Society B, 375(1805), 20190428.[PDF](https://www.dropbox.com/s/3u65392hv0k53hv/Shaver-2020_church-attendance-and-alloparenting.pdf?dl=0)
+
+
+
+## Week 8: Gods and minds in cultural context
+
+Willard, A. K., & McNamara, R. A. (2019). The minds of god (s) and humans: Differences in mind perception in Fiji and North America. Cognitive science, 43(1), e12703.[PDF](https://www.dropbox.com/s/ofawmmozfyog7p2/Rita_Minds_GODS.pdf?dl=0)
+
+Purzycki, B. G., Finkel, D. N., Shaver, J., Wales, N., Cohen, A. B., & Sosis, R. (2012). What does God know? Supernatural agents’ access to socially strategic and non‐strategic information. Cognitive Science, 36(5), 846-869. [PDF](https://www.dropbox.com/s/gorxdhw7u44bl2e/Shaver_What_GODS_KNOW.pdf?dl=0)
+
+
+## Week 9:  Atheism
+
+Norenzayan, Ara, and Will M. Gervais. "The origins of religious disbelief." Trends in Cognitive Sciences 17, no. 1 (2013): 20-25. [PDF](https://www.dropbox.com/s/qjgi3llsgbkpmy7/the-origins-of-religious-disbelief.pdf?dl=0)
+
+Gervais, Will M. 2017. “Global Evidence of Extreme Intuitive Moral Prejudice Against Atheists”[Link](https://www.nature.com/articles/s41562-017-0151)
+
+
+ 
+## Week 10: Ecology and Beliefs
+
+Sibley, Chris G., and Joseph Bulbulia. "Faith after an earthquake: A longitudinal study of religion and perceived health before and after the 2011 Christchurch New Zealand earthquake." PloS one 7, no. 12 (2012): e49648 [link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049648)
+
+Botero, C. A., Gardner, B., Kirby, K. R., Bulbulia, J., Gavin, M. C., & Gray, R. D. (2014). The ecology of religious beliefs. Proceedings of the National Academy of Sciences, 111(47), 16784-16789.[link](https://doi.org/10.1073/pnas.1408701111)
+
+ 
+## Week 11: Religious variation in New Zealand
+
+Wilson, J. Bulbulia, and C. G. Sibley. Differences and similarities in religious and paranormal beliefs: a typology of distinct faith signatures. Religion, Brain and Behavior, 1–23, 2015 [link](https://www.tandfonline.com/doi/full/10.1080/2153599X.2013.779934)
+
+Bulbulia, J. A., Troughton, G., Highland, B. R., & Sibley, C. G. (2020). A national-scale typology of orientations to religion poses new challenges for the cultural evolutionary study of religious groups. Religion, Brain & Behavior, 10(3), 239-251.[link](https://doi.org/10.1080/2153599X.2019.1678516)
+
+
+## Week 12 Course wrap up
+
+Mesoudi, A. (2009). How cultural evolutionary theory can inform social psychology and vice versa. Psychological review, 116(4), 929. [PDF](Mesoudi-2009_How-Cultural-Evolutionary-Theory-Can-Inform-Social-Psychology)
