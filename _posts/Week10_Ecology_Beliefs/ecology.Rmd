@@ -30,3 +30,11 @@ knitr::opts_chunk$set(
 ```{r echo=F}
 knitr::include_graphics("f1.jpg")
 ```
+
+
+## Links to readings
+
+
+Sibley, Chris G., and Joseph Bulbulia. "Faith after an earthquake: A longitudinal study of religion and perceived health before and after the 2011 Christchurch New Zealand earthquake." PloS one 7, no. 12 (2012): e49648 [link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049648)
+
+Botero, C. A., Gardner, B., Kirby, K. R., Bulbulia, J., Gavin, M. C., & Gray, R. D. (2014). The ecology of religious beliefs. Proceedings of the National Academy of Sciences, 111(47), 16784-16789.[link](https://doi.org/10.1073/pnas.1408701111)

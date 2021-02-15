@@ -31,3 +31,13 @@ knitr::opts_chunk$set(
 knitr::include_graphics("f1.png")
 ```
 
+## Links to readings
+
+
+Bulbulia, J., Geertz, A., Atkinson, Q., Cohen, E., Evans, N., Francois, P., ... & Wilson, D. (2013). The cultural evolution of religion. Cultural evolution: Society, technology, language, and religion. Vol. 12. MIT Press, 2013. [PDF](https://www.dropbox.com/s/l3u5pxeam6f79xf/Bulbulia-etal-2013_The-Cultural-Evolution-of-Religion.pdf?dl=0)
+
+Watts, J., Sheehan, O., Bulbulia, J., Gray, R. D., & Atkinson, Q. D. (2018). Christianity spread faster in small, politically structured societies. Nature human behaviour, 2(8), 559-564.[link](https://www.nature.com/articles/s41562-018-0379-3)
+
+Watts, J., Sheehan, O., Atkinson, Q. D., Bulbulia, J., & Gray, R. D. (2016). Ritual human sacrifice promoted and sustained the evolution of stratified societies. Nature, 532(7598), 228. [link](https://www.nature.com/articles/nature17159)
+
+

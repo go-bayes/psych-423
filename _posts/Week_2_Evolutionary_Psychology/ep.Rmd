@@ -32,6 +32,16 @@ knitr::include_graphics("e.png")
 
 
 
+## Links to readings
+
+
+Cosmides, Leda, and John Tooby. "Evolutionary psychology: A primer." (1997).
+[Website:](http://www.cep.ucsb.edu/primer.html)
+
+Steven Mithen’s very brief review from an archaeological perspective (3 pages): Mithen, S. (1997). The Adapted Mind: Evolutionary Psychology and the Generation of Culture. [PDF](https://www.dropbox.com/s/7wbd688uyfp0cu2/Mithen-1997_Reviewed-Work-The-Adapted-Mind-Evolutionary-Psychology.pdf?dl=0)
+
+Guthrie, Stewart. "Spiritual beings: A Darwinian, cognitive account." Bulbulia et al., eds., Evolution of Religion (2008): 239-245. [PDF](https://www.dropbox.com/s/8xn1tnm0vqizdar/Guthrie2008.pdf?dl=0)
+
 
 
 

@@ -27,6 +27,15 @@ knitr::opts_chunk$set(
 
 
 
-```{r echo=F}
-#knitr::include_graphics("f1.jpg")
+```{r atheism, fig.cap= "source:https://www.bbc.com/news/magazine-34054057",echo=F}
+knitr::include_graphics("f1.jpg")
 ```
+
+
+## Links to readings
+
+
+Norenzayan, Ara, and Will M. Gervais. "The origins of religious disbelief." Trends in Cognitive Sciences 17, no. 1 (2013): 20-25. [PDF](https://www.dropbox.com/s/qjgi3llsgbkpmy7/the-origins-of-religious-disbelief.pdf?dl=0)
+
+Gervais, Will M. 2017. “Global Evidence of Extreme Intuitive Moral Prejudice Against Atheists”[Link](https://www.nature.com/articles/s41562-017-0151)
+

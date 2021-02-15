@@ -31,3 +31,11 @@ knitr::opts_chunk$set(
 knitr::include_graphics("f1.png")
 ```
 
+## Links to readings
+
+Weeden, J., Cohen, A. B., & Kenrick, D. T. (2008). Religious attendance as reproductive support. Evolution and Human Behavior, 29(5), 327-334. [PDF](https://www.dropbox.com/s/4ci1h4fwlurq5xq/Weeden_Feritility.pdf?dl=0)
+
+
+Blume, Michael. "The reproductive benefits of religious affiliation." In The biological evolution of religious mind and behavior, pp. 117-126. Springer Berlin Heidelberg, 2009. [PDF](https://www.dropbox.com/s/5yzz4iq8r41mmy7/blume.pdf?dl=0)
+
+Shaver, J. H., Power, E. A., Purzycki, B. G., Watts, J., Sear, R., Shenk, M. K., ... & Bulbulia, J. A. (2020). Church attendance and alloparenting: an analysis of fertility, social support and child development among English mothers. Philosophical Transactions of the Royal Society B, 375(1805), 20190428.[PDF](https://www.dropbox.com/s/3u65392hv0k53hv/Shaver-2020_church-attendance-and-alloparenting.pdf?dl=0)

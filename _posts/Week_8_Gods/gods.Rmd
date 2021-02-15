@@ -27,6 +27,14 @@ knitr::opts_chunk$set(
 
 
 
-```{r echo=F}
-#knitr::include_graphics("f1.jpg")
+```{r god, fig.cap="source: https://commons.wikimedia.org/wiki/File:Michelangelo,_Creation_of_Adam_06.jpg", echo=F}
+knitr::include_graphics("f.jpg")
 ```
+
+## Links to readings
+
+
+Willard, A. K., & McNamara, R. A. (2019). The minds of god (s) and humans: Differences in mind perception in Fiji and North America. Cognitive science, 43(1), e12703.[PDF](https://www.dropbox.com/s/ofawmmozfyog7p2/Rita_Minds_GODS.pdf?dl=0)
+
+Purzycki, B. G., Finkel, D. N., Shaver, J., Wales, N., Cohen, A. B., & Sosis, R. (2012). What does God know? Supernatural agents’ access to socially strategic and non‐strategic information. Cognitive Science, 36(5), 846-869. [PDF](https://www.dropbox.com/s/gorxdhw7u44bl2e/Shaver_What_GODS_KNOW.pdf?dl=0)
+

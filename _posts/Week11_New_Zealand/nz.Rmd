@@ -23,10 +23,18 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Cultural evolution of religions
+## New Zealand's religious diversity
 
 
 
 ```{r echo=F}
 knitr::include_graphics("f.png")
 ```
+
+
+## Links to readings
+
+
+Wilson, J. Bulbulia, and C. G. Sibley. Differences and similarities in religious and paranormal beliefs: a typology of distinct faith signatures. Religion, Brain and Behavior, 1–23, 2015 [link](https://www.tandfonline.com/doi/full/10.1080/2153599X.2013.779934)
+
+Bulbulia, J. A., Troughton, G., Highland, B. R., & Sibley, C. G. (2020). A national-scale typology of orientations to religion poses new challenges for the cultural evolutionary study of religious groups. Religion, Brain & Behavior, 10(3), 239-251.[link](https://doi.org/10.1080/2153599X.2019.1678516)

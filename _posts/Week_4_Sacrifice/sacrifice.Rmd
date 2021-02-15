@@ -31,3 +31,17 @@ knitr::opts_chunk$set(
 knitr::include_graphics("f1.png")
 ```
 
+
+## Links to readings
+
+
+
+Bulbulia, Joseph. "Religious costs as adaptations that signal altruistic intention." Evolution and Cognition 10, no. 1 (2004): 19-38. [PDF](https://www.dropbox.com/s/whqhjrdk0od18lp/COSTSADAPT.pdf?dl=0)
+
+Sosis, R., & Bressler, E. R. (2003). Cooperation and commune longevity: A test of the costly signalling theory of religion. Cross-cultural research, 37(2), 211-239. [PDF](https://www.dropbox.com/s/22t4mw5mg3l5kc2/Sosis-Bressler-2003_Cooperation-and-commune-longetivity.pdf?dl=0)
+
+Sosis, R., Kress, H. C., & Boster, J. S. (2007). Scars for war: Evaluating alternative signaling explanations for cross-cultural variance in ritual costs. Evolution and Human Behavior, 28(4), 234-247. [PDF](https://www.dropbox.com/s/i6c978wgm8y4x7j/2007-Scars-for-War.pdf?dl=0)
+
+Sosis, R. (2009). The adaptationist-byproduct debate on the evolution of religion: Five misunderstandings of the adaptationist program. Journal of Cognition and Culture, 9(3-4), 315-332. [PDF](https://www.dropbox.com/s/p693bdwirsuno7s/Sosis-2009_The-Adaptationist-Byproduct-Debate-on-the-Evolution-of-Religion.pdf?dl=0)
+
+

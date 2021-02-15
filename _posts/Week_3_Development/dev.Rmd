@@ -30,3 +30,14 @@ knitr::opts_chunk$set(
 knitr::include_graphics("f1.jpg")
 ```
 
+
+## Links to readings
+
+Kelemen, Deborah. "Are children “intuitive theists”? Reasoning about purpose and design in nature." Psychological Science 15, no. 5 (2004): 295-301. [PDF](https://www.dropbox.com/s/31kvfyx9jxkypnr/2004.KELEMEN.INTUITIVE.THEISM.pdf?dl=0)
+
+Harris, Paul L., and Melissa A. Koenig. "Trust in testimony: How children learn about science and religion." Child development 77, no. 3 (2006): 505-524. [PDF](https://www.dropbox.com/s/e3bttnc142wgbvz/Harris_et_al-2006-Child_Development.pdf?dl=0)
+
+Bloom, P. (2007). Religion is natural. Developmental science, 10(1), 147-151. 
+[PDF](https://www.dropbox.com/s/mwke5mgtqmzneoy/BLOOM_Religion.pdf?dl=0)
+ 
+
