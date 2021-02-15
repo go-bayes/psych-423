@@ -27,11 +27,8 @@ knitr::opts_chunk$set(
 
 
 ```{r maur1, echo=F}
-knitr::include_graphics("church.png")
+knitr::include_graphics("jb.png")
 ```
-
-
-
 
 We define culture in a broadly to socially transmitted and acquired information information that affects and enables human cognition and behavior. That's not perfect. For example, its clear that birds, chimps, and other organisms have culture, however, this definition makes a start. 
 

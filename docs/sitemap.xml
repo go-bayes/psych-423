@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://github.com/go-bayes/github.io-423-culture/about.html</loc>
-    <lastmod>2021-02-15T16:58:39+13:00</lastmod>
+    <lastmod>2021-02-15T17:16:29+13:00</lastmod>
   </url>
   <url>
     <loc>https://github.com/go-bayes/github.io-423-culture/assessments.html</loc>
@@ -13,11 +13,19 @@
     <lastmod>2021-02-14T22:14:45+13:00</lastmod>
   </url>
   <url>
+    <loc>https://github.com/go-bayes/github.io-423-culture/posts/Week_4_Sacrifice/</loc>
+    <lastmod>2021-02-15T17:53:38+13:00</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/go-bayes/github.io-423-culture/posts/Week_3_Development/</loc>
+    <lastmod>2021-02-15T17:53:03+13:00</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/go-bayes/github.io-423-culture/posts/Week_2_Evolutionary_Psychology/</loc>
-    <lastmod>2021-02-14T22:16:25+13:00</lastmod>
+    <lastmod>2021-02-15T17:45:31+13:00</lastmod>
   </url>
   <url>
     <loc>https://github.com/go-bayes/github.io-423-culture/posts/Week_1_Introduction/</loc>
-    <lastmod>2021-02-15T17:02:14+13:00</lastmod>
+    <lastmod>2021-02-15T17:19:53+13:00</lastmod>
   </url>
 </urlset>

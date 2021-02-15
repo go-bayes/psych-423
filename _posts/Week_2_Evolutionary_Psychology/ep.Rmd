@@ -24,22 +24,12 @@ knitr::opts_chunk$set(
 ```
 
 
-## Culture and evolution 
 
 
-<!-- ## Slide deck -->
+```{r maur1, echo=F}
+knitr::include_graphics("e.png")
+```
 
-<!-- Click [here](slides_1.html) to go to the slide deck. -->
-
-<!-- ```{r embed-xaringan, layout="l-body-outset"} -->
-<!-- xaringanExtra::embed_xaringan(url = "slides_2.html", ratio = "4:3") -->
-<!-- ``` -->
-
-
-## Key Concepts
-
-
-## Readings
 
 
 

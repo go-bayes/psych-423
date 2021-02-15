@@ -31,14 +31,13 @@ Email: jiun.youn@vuw.ac.nz
 
 This course examines social psychology from a cross-cultural perspective. To what extent is social behaviour different or the same across the world? What theories can we use to understand the thoughts, feelings, actions, and beliefs of people across cultures? Emphasis is on such basic social processes as construction of identity and personality, dimensions of cultural variation, and intergroup harmony and conflict. Issues towards developing cross-cultural competence are considered, with an eye towards establishing better practices for the evolving population of Aotearoa/New Zealand.  
 
-## Religion as Window
-
-[see](https://uoa-eresearch.github.io/religion/churches.html)
-
+## Religion as a Window into Culture and Behaviour
 
 This year, we will use religion as a window through which to view patterns of cultural variation and similarity. 
 
 From the healing rituals of the Kung people in southern Africa, to the human sacrificial rituals of the Aztecs, to the liberating speeches of Martin Luther King, human spirituality is both diverse and powerful.  What explains the near universality of religion? What explains its diversity of forms? Are religions like typewriters, once useful but now obsolete?  Or will religions remain vital for humanity's future.   Here, we investigate these questions from the perspective of *cultural evolution*.
+
+[See our church_Map](https://uoa-eresearch.github.io/religion/churches.html)
 
 
 ## Communication of additional information and submissions
