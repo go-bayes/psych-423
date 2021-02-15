@@ -27,7 +27,7 @@ knitr::opts_chunk$set(
 
 
 ```{r maur1, echo=F}
-knitr::include_graphics("fig1.jpg")
+knitr::include_graphics("church.png")
 ```
 
 
@@ -36,14 +36,6 @@ knitr::include_graphics("fig1.jpg")
 We define culture in a broadly to socially transmitted and acquired information information that affects and enables human cognition and behavior. That's not perfect. For example, its clear that birds, chimps, and other organisms have culture, however, this definition makes a start. 
 
 ## What is evolution? 
-
-
-```{r phy, echo=F}
-knitr::include_graphics("phy.png")
-```
-
-
-
 
 We define evolution as a process by which design accumulates in living systems under the following conditions: 
 
