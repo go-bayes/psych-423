@@ -15,19 +15,19 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Overview of assessments
 
-4 x article “peer” review reports of an assigned reading  = 20%.
- 
-1 x student led presentation = 10%.
- 
-10 x class participation + engagement points = 20%.
- 
-1 x Grant application initial proposal = 15% “application inquiry” – or preliminary plan. 
+5 x article “peer” review reports of an assigned reading = 25%.
 
-1 x "Grant application final grant = 35%
- 
+10 x class participation + engagement points = 10%. 
+
+1 x student led presentation = 10%.
+
+1 x Grant application initial proposal = 15% “application inquiry” – or preliminary plan.
+
+1 x "Grant application final grant = 40%
+
 All submissions of work should be on Blackboard.
 
-### 4 x Peer Review Article Reports: 20%
+### 5 x Peer Review Article Reports: 25%
 
 Click [here](templates/template_review.html) for a template.
 Click [here](templates/template_review.Rmd) for the Rmd template.
@@ -55,7 +55,7 @@ Any four of the following dates prior to class:
   - ~~MAY 27~~
   - FINAL PROJECT DUE 31 MAY
   
-### 10 x Seminar Participation: 20%
+### 10 x Seminar participation reports: 10%
 
 In which you:
 
@@ -84,7 +84,8 @@ Dates:
 ### 1 x The Grant Proposal: total = 50% 
 
 - Preliminary grant inquiry due MIDNIGHT APRIL 24 = 15%
-- Final grant proposal due MIDNIGHT 31 MAY = 35% 
+
+- Final grant proposal due MIDNIGHT 31 MAY = 40% 
 
 The course culminates with an in-depth project called "The Grant" in which students develop a grant proposal for conducting original research. Effective grant-writing requires a command of the relevant science, concision, clarity, and imagination.
 
