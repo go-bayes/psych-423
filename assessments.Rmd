@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 1 x Grant application initial proposal = 15% “application inquiry” – or preliminary plan.
 
-1 x "Grant application final grant = 40%
+1 x Grant application final grant = 40%
 
 All submissions of work should be on Blackboard.
 
