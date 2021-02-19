@@ -31,6 +31,10 @@ Email: jiun.youn@vuw.ac.nz
 
 This course examines social psychology from a cross-cultural perspective. To what extent is social behaviour different or the same across the world? What theories can we use to understand the thoughts, feelings, actions, and beliefs of people across cultures? Emphasis is on such basic social processes as construction of identity and personality, dimensions of cultural variation, and intergroup harmony and conflict. Issues towards developing cross-cultural competence are considered, with an eye towards establishing better practices for the evolving population of Aotearoa/New Zealand.  
 
+## Assessments
+
+See: [Assessments](https://go-bayes.github.io/psych-423/assessments.html)
+
 ## Religion as a Window into Culture and Behaviour
 
 This year, we will use religion as a window through which to view patterns of cultural variation and similarity. 
@@ -57,7 +61,7 @@ Teaching dates: 22 February to 28 May
 
 Mid-trimester break: 5 April to 18 April
 
-Last assessment item due: Final assessment (research proposal) will need to be submitted on 31st May (see [Assessments](https://go-bayes.github.io/psych-423/assessments.html))
+Last assessment item due: Final assessment (research proposal) will need to be submitted on 31st May see: [Assessments](https://go-bayes.github.io/psych-423/assessments.html)
 
 Study Examination/Assessment Period: 
 Note: students who enrol in courses with examinations must be able to attend an examination at the University at any time during the scheduled examination period.
