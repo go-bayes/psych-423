@@ -12,7 +12,6 @@ author:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-
 ## Overview of assessments
 
 5 x article “peer” review reports of an assigned reading = 25%.
