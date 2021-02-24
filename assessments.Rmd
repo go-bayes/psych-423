@@ -26,14 +26,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 All submissions of work should be on Blackboard.
 
-### 5 x Peer Review Article Reports: 25%
+### 5 x Peer Review Article Reports: 25% (up to 1000 words each)
 
 Click [here](templates/template_review.html) for a template.
 Click [here](templates/template_review.Rmd) for the Rmd template.
 
 The *Peer Review Article Report* will offer you for training in the art of offering constructive, critical feedback to another person or team's ideas.  In developing this art, you'll also develop your abilities for effective communication. 
 
-### 1 x Seminar Presentation: 10%
+### 1 x Seminar Presentation: 10% (up to 10 minutes)
 
 In which you lead a class discussion by presenting your peer review article report. You will evaluate the strengths and weaknesses of an article, and offer an evaluation of where it fits in with the the larger cultural evolutionary literature.  
 
@@ -54,12 +54,12 @@ Any four of the following dates prior to class:
   - ~~MAY 27~~
   - FINAL PROJECT DUE 31 MAY
   
-### 10 x Seminar participation reports: 10%
+### 10 x Seminar participation reports: 10% (~ 100 words each)
 
 In which you:
 
-1. turn up (1 pt)
-2. offer a brief description of a thought, question, or insight you've had during the seminar (1pt)
+1. turn up (.5 pt)
+2. offer a brief description of a thought, question, or insight you've had during the seminar ( .5pt)
 
 Note that you can miss 2 x seminars and still receive full points for this assessment. 
 
