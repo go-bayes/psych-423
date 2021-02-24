@@ -32,10 +32,21 @@ opts_chunk$set(
 color_scheme_set("darkgray")
 ```
 
+# Welcome
+
+
+
+<div class="notes">
+Greetings everyone, welcome to Psyc 423: Culture and Social Behaviour.
+I'm Joseph Bulbulia and I will be your instructor 
+</div>
+
 
 ## What is culture?
 
 We define culture in a broadly to socially transmitted and acquired information information that affects and enables human cognition and behavior. That's not perfect. For example, its clear that birds, chimps, and other organisms have culture, however, this definition makes a start. 
+
+
 
 ## What is evolution? 
 
