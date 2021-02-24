@@ -37,7 +37,7 @@ We define culture in a broadly to socially transmitted and acquired information 
 ## What is evolution? 
 
 
-```{r layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap=" From Martin Nowak's Five Rules For The Evolution of Cooperation"}
+```{r nowak, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="\\label{fig:nowak} From Martin Nowak's Five Rules For The Evolution of Cooperation"}
 knitr::include_graphics("nowak.png")
 ```
 We define evolution as a process by which design accumulates in living systems under the following conditions: 
@@ -64,68 +64,111 @@ There are three main benefits for combining culture and evolution:
 ### Evolutionary Puzzle 1: religion appears to be biologically costly
 
 
-```{r   layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "What is the Expression on this woman's face? "}
+```{r  pain1, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "\\label{fig:pain1} What is the Expression on this woman's face?"}
 knitr::include_graphics("pain1.png")
 ```
 
+Figure \@ref(fig:pain1) is photograph that my colleague Ron Fischer took when were in Mauritius investigating the emotional dynamics in highly arousal rituals. What expression is the woman conveying in this image? 
+
   
-```{r   layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "Biological puzzle of costs"}
+```{r  pain2, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "\\label{fig:pain2} Biological puzzle of costs"}
 knitr::include_graphics("pain2.png")
 ```
   
+If you guessed sorrow, you are correct. The woman was weeping so loudly that the little boy in the background had to cup his ears (See Figure \@ref(fig:pain2)).
+
+From a biological vantage point, we might a species to actively avoid unnecessary suffering and bodily damage. However, as we shall reapedly see throughout this course, rituals are frequently associated with costs and risks. As evident in Figure \@ref(fig:nowak), conservation implies adaptation. Where's the adaptation in costly rituals? Why, are costly rituals conserved? 
+
 <aside>
-  ```{r  fig.width=6, fig.height=1.5, fig.cap="Hindu Sadus actively destroy reproductive futures"}
+  ```{r sadhu, fig.width=8, fig.height=3.5, fig.cap="\\label{fig:sadhu} Hindu Sadus actively destroy reproductive futures. This is biologically puzzling"}
 knitr::include_graphics("cost.png")
 ```
 </aside>
 
+The image in Figure  \@ref(fig:sadhu) is of a Sadhu. A Sadhu is a religious ascetics who take vows of self-denial to achieve ”mosksha” – which in the Hindu tradition is a state of liberation.  The acetic regimes are associated with contemplative practices such as prayers and mantra recitations.  The austerity is thought to remove the spiritual effects of karma (action) which cause ,may cause future states of unhappiness.  Why would an anthropologist from Mars be puzzled by these Hindu Saddhus?
+
+
 ### Evolutionary Puzzle 2: Religion is ancient
 
+On the human capacity to fathom geological time scales, Darwin writes:
 
-  ```{r layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="Evidence for ritual at least 150kya"}
+> It is hardly possible for me even to recall to the reader, who may not be a practical geologist, the facts leading the mind feebly to comprehend the lapse of time ... 
+  – Charles Darwin, Origins of Species, p.283
+>
+> It strikes me that all our knowledge about the structure of our Earth is very much like what an old hen would know of the hundred-acre field in a corner of which she is scratching.
+  –Charles Darwin, Life and Letters of Charles Darwin vol 2,  p.348) 
+
+
+We tend to think of the ancient Greeks and Romans as inhabiting the deep human past. However anatomically modern humans have been around about 200,000 years. 
+
+  ```{r rold, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="\\label{fig:rold}Evidence for ritual at least 150kya"}
 knitr::include_graphics("rold.png")
 ```
+
+Rituals have been around as long as humans have been around, and perhaps longer. The Figure \@ref(fig:rold) draws the archeological evidence for rituals on a time line. 
+
+Here's a thought experiment: 
+
+Imagine that distance from the present to the origins of Christianity (about 2000 years) is one step. 
+
+Note that it would take another 15 steps before we reached the evidence of supernatural art in European caves Clottes and Chauvet. Go ahead and find a place were you can walk 15 steps. As you are counting, imagine the passing of 2000 years with each pace. During those spans of time, there were humans just like you and I who were getting on with the business of their lives. 
+
+Double that distance again, and we reach the Blombos caves in South Africa, where archeologists describe function-less artifacts that indicate (to archeologists, anyway) evidence of symbolic thinking. 
+
+Add another 15 paces and we arrive at Quafez burials of Hominins close relatives the neanderthals. The layout of a child's grave with artefacts and attentive orientation appears to signify a supernatural drama. Were these thoughts religious? 
+
+Finally, it will take us another 25 steps to reach the Herto finds in Ethiopia, where Tim White found skulls with etchings indicting that they were fastened to chords and swung. Were the rituals imagining an afterlife into which the dead travelled? 
+
+Of course, we can only speculate about the events of the deep ancestral human past. However, the fact that people were engaging in symobolic rituals is consistent with supernatual speculation.  Why was religion conserved all that time? 
+
+<aside>
+Netflix advice: watch Werner Herzog's *Caves of Dreams*, which describes this rediscovery of Chauvet in the late 20th century.
+</aside>
+
 
 
 
 ### Evolutionary Puzzle 3: Religion is pervasive, and growing 
 
 
-```{r   layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "People in the New century will be religious"}
+The Pew Foundation predicts that the proportion of the religious population will *grow* in the future. ^[For more information on the Pew Foundations forcasts for the religion in the future go [here](http://www.globalreligiousfutures.org/)]
+
+
+```{r  fc, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "\\label{fig:fc}Pew predicts the world we encounter in the decades ahead will be increasingly religious"}
 knitr::include_graphics("forcast.png")
 ```
 
 
+Roughtly speaking religious change at the population level is a function of two processes: 
+  1  religious conversion/deconversion
+  2. birthrates of religious and non-religous people
 
-```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Diversity of one mosque: Al Noor (Christchurch"}
-knitr::include_graphics("alnoor.png")
-```
+There are only two pathways for having a religion or losing religion. You are born into a family that has/doesn't have a religion.  You convert/de-convert.  Figure \@ref(ch) presents the expected number of children by for people living in New Zealand by religious affiliation. The redline is the biological replacement threshold of 2 x children (for a population to maintain its numbers each person must have an average of 2 x kids because each child has 2 x parents). 
 
-
-```{r  layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="Highest levels  of religious identification predict more children"}
-knitr::include_graphics("chrel.png")
+```{r ch, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="\\label{fig:ch}Highest levels  of religious identification predict more children"}
+knitr::include_graphics("children.png")
 ```
 
 ### Religion in your backyard
 
 
-```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Places of faith in Wellington"}
+```{r ch_wl, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:ch_wl}Places of faith in Wellington"}
 knitr::include_graphics("ch_wl.png")
 ```
 
 
-```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Places of faith in Upper Hutte"}
+```{r  ch_hutt, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:ch_hutt}Places of faith in Upper Hutte"}
 knitr::include_graphics("ch_hutt.png")
 ```
 
 
-```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Places of faith in Upper Hutte"}
+```{r  ch_petone, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:ch_petone}Places of faith in Petone"}
 knitr::include_graphics("ch_petone.png")
 ```
 
 
 
-```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Diversity of one mosque: Al Noor (Christchurch"}
+```{r  alnoor, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:alnoor}Diversity of one mosque: Al Noor (Christchurch"}
 knitr::include_graphics("alnoor.png")
 ```
 
@@ -143,7 +186,7 @@ Expectations:
   
 ## Sign up for the class participation here
 
-```{r layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Blackboard sign up"}
+```{r bb, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:bb}Blackboard sign up"}
 knitr::include_graphics("bb.png")
 ```
 
