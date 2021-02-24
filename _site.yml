@@ -19,7 +19,7 @@ navbar:
   left:
     - text: "About"
       href: about.html
-    - text: "Coures Materials"
+    - text: "Lectures"
       href: index.html
     - text: "Assessments"
       href: assessments.html

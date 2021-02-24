@@ -13,6 +13,8 @@ output:
   distill::distill_article:
     self_contained: false
     toc: true
+    highlight: pygments
+    highlight_downlit: false
 ---
 
 
@@ -34,14 +36,18 @@ We define culture in a broadly to socially transmitted and acquired information 
 
 ## What is evolution? 
 
+
+```{r layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap=" From Martin Nowak's Five Rules For The Evolution of Cooperation"}
+knitr::include_graphics("nowak.png")
+```
 We define evolution as a process by which design accumulates in living systems under the following conditions: 
 
   1. Variation within a population
   2. Competition among variants 
   3. Inheritance such that there is a faithful transmission to "children" of "parental" traits.
   
-Here too, we an approximate definition to make a start. 
-  
+Here too, we have only an approximate definition to make a start.^[Source of image Martin' Nowak's Five Rules for the Evolution of Cooperatoin [here](https://www.researchgate.net/figure/Without-any-mechanism-for-the-evolution-of-cooperation-natural-selection-favors_fig2_6641993)] 
+
 
 ## Why combine culture and evolution? 
 
@@ -51,17 +57,97 @@ There are three main benefits for combining culture and evolution:
 
   1. to clarify otherwise bewildering cultural diversity;
   2. to unlock wisdom in culturally inherited systems;
-  3. to  avoid to cultural evolved inequality.   
+  3. to avoid to cultural evolved inequality.   
+  
+## Focus on Religion
+
+### Evolutionary Puzzle 1: religion appears to be biologically costly
+
+
+```{r   layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "What is the Expression on this woman's face? "}
+knitr::include_graphics("pain1.png")
+```
+
+  
+```{r   layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "Biological puzzle of costs"}
+knitr::include_graphics("pain2.png")
+```
+  
+<aside>
+  ```{r  fig.width=6, fig.height=1.5, fig.cap="Hindu Sadus actively destroy reproductive futures"}
+knitr::include_graphics("cost.png")
+```
+</aside>
+
+### Evolutionary Puzzle 2: Religion is ancient
+
+
+  ```{r layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="Evidence for ritual at least 150kya"}
+knitr::include_graphics("rold.png")
+```
+
+
+
+### Evolutionary Puzzle 3: Religion is pervasive, and growing 
+
+
+```{r   layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "People in the New century will be religious"}
+knitr::include_graphics("forcast.png")
+```
+
+
+
+```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Diversity of one mosque: Al Noor (Christchurch"}
+knitr::include_graphics("alnoor.png")
+```
+
+
+```{r  layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="Highest levels  of religious identification predict more children"}
+knitr::include_graphics("chrel.png")
+```
+
+### Religion in your backyard
+
+
+```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Places of faith in Wellington"}
+knitr::include_graphics("ch_wl.png")
+```
+
+
+```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Places of faith in Upper Hutte"}
+knitr::include_graphics("ch_hutt.png")
+```
+
+
+```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Places of faith in Upper Hutte"}
+knitr::include_graphics("ch_petone.png")
+```
+
+
+
+```{r  layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Diversity of one mosque: Al Noor (Christchurch"}
+knitr::include_graphics("alnoor.png")
+```
+
 
 ## What will I be doing in this course? 
 
 Expectations:
 
-  1. You'll participate in seminars (which means attending).
-  2. You'll lead a seminar discussion
-  3. You'll write 4 x peer review reports
-  4. You'll develop a "grant proposal" for conducting cultural evolutionary research. 
+  - 5 x article “peer” review reports of an assigned reading = 25%.
+  - 10 x class participation + engagement points = 10%.
+  - 1 x student led presentation = 10%.
+  - 1 x Grant application initial proposal = 15% “application inquiry” – or preliminary plan.
+  - 1 x "Grant application final grant = 40%
+  
+  
+## Sign up for the class participation here
 
+```{r layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="Blackboard sign up"}
+knitr::include_graphics("bb.png")
+```
+
+  
 ## How will this course benefit me? 
 
   1. Knowledge of cultural evolutionary theory and research
