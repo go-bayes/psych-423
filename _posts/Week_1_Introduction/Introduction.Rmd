@@ -32,7 +32,7 @@ knitr::opts_chunk$set(
 knitr::include_graphics("jb.png")
 ```
 
-We define culture in a broadly to socially transmitted and acquired information information that affects and enables human cognition and behavior. That's not perfect. For example, its clear that birds, chimps, and other organisms have culture, however, this definition makes a start. 
+We define culture as socially transmitted and acquired information information that affects and enables human cognition and behavior. That's not perfect. For example, its clear that birds, chimps, and other organisms have culture, however, this definition makes a start. 
 
 ## What is evolution? 
 
@@ -59,7 +59,49 @@ There are three main benefits for combining culture and evolution:
   2. to unlock wisdom in culturally inherited systems;
   3. to avoid to cultural evolved inequality.   
   
+
 ## Focus on Religion
+
+### Religions prominently display cultural variation
+
+
+From the healing rituals of Kalahari foragers to monumental Aztec sacrificial theaters, religion spans the full range of human experiences. (See \ref@(fig:religions))
+
+```{r  religions, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "\\label{fig:religions} Religions exhibit strong cultural variation?"}
+knitr::include_graphics("religions.png")
+```
+
+Traditional scholars of religion have long argued that the best we can do is to *describe* religious diversity.   
+
+As we shall see next week, cognitive scientists of religion have urged that religious diversity is an illusion. 
+
+Are California Buddhist Fruit-arians and murderous Aztecs priests variations on the same theme? If not, is the best we can do as academics is to describe their differences? Or might there be systematic patterns across religious cultural diversity.  If so, might we  detect and decipher these patterns?  And what might such patterns teach us about the role of religion in social life? 
+
+### Approaching cultural varation using by melding ethnographic, historical, and biological toolkits
+
+Similar questions have arisen for species, where computational phylogenetic methods have afforded substantial progress in detecting, and deciphering systematic patterns in the extraordinary diversity of species. Figure \@ref(fig:birds) depicts the magnificent morphological variation of Eastern Wood Warblers.^[Source: Professor Russel Gray]
+
+```{r  birds, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "\\label{fig:birds} Eastern Wood Warblers?"}
+knitr::include_graphics("birds.png")
+```
+
+Though we might spend a lives describing the diversity of this and other lineages,  
+it is possible to infer family histories using computational phylogenetic methods. From these histories, the timing and rates of branching between species in the Eastern Wood Warblers have be estimated. Rates of evolution within clades have also be inferred (see \@ref(fig:birdsphy)).
+
+
+```{r  birdsphy, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "\\label{fig:birdsphy} Eastern Wood Warbler Phylogeny: what do the historical patterns suggest about causes of the morphological variation  that we observe today?"}
+knitr::include_graphics("birds_phy.png")
+```
+
+Here we see an early burst of speciation followed by stasis. This pattern is consistent with theories of speciation for which there were early ecological opportunities, evolution to fill the gaps, and then a long period of relative status.  We might use this pattern to inquire about what opportunities presented early on, and whether the variation that occurred early on related to task-specific functions that the natural and social ecologies of that time afforded. 
+
+
+In the weeks ahead, we will explore the interest of similar approaches to the cultural diversity of religions (See Figure \@ref(fig:religionsphy). 
+
+```{r  religionsphy, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "\\label{fig:religionsphy} Image is from a global phylogeny of religion that Russell Gray, Anastasia Ejova, Oliver Sheehan, and Remco Bourkart and others (including me) are preparing at the Max Planck Institute for the Science of Human History. What do the patterns of religious diversification tell us about the histories of the world's major faiths?"}
+knitr::include_graphics("religions_phy.png")
+```
+
 
 ### Evolutionary Puzzle 1: religion appears to be biologically costly
 
@@ -77,7 +119,7 @@ knitr::include_graphics("pain2.png")
   
 If you guessed sorrow, you are correct. The woman was weeping so loudly that the little boy in the background had to cup his ears (See Figure \@ref(fig:pain2)).
 
-From a biological vantage point, we might a species to actively avoid unnecessary suffering and bodily damage. However, as we shall reapedly see throughout this course, rituals are frequently associated with costs and risks. As evident in Figure \@ref(fig:nowak), conservation implies adaptation. Where's the adaptation in costly rituals? Why, are costly rituals conserved? 
+From a biological vantage point, we might a species to actively avoid unnecessary suffering and bodily damage. However, as we shall repeatedly see throughout this course, rituals are frequently associated with costs and risks. As evident in Figure \@ref(fig:nowak), conservation implies adaptation. Where's the adaptation in costly rituals? Why, are costly rituals conserved? 
 
 <aside>
   ```{r sadhu, fig.width=8, fig.height=3.5, fig.cap="\\label{fig:sadhu} Hindu Sadus actively destroy reproductive futures. This is biologically puzzling"}
@@ -105,7 +147,7 @@ We tend to think of the ancient Greeks and Romans as inhabiting the deep human p
 knitr::include_graphics("rold.png")
 ```
 
-Rituals have been around as long as humans have been around, and perhaps longer. The Figure \@ref(fig:rold) draws the archeological evidence for rituals on a time line. 
+Rituals have been around as long as humans have been around, and perhaps longer. The Figure \@ref(fig:rold) draws the archaeological evidence for rituals on a time line. 
 
 Here's a thought experiment: 
 
@@ -113,13 +155,13 @@ Imagine that distance from the present to the origins of Christianity (about 200
 
 Note that it would take another 15 steps before we reached the evidence of supernatural art in European caves Clottes and Chauvet. Go ahead and find a place were you can walk 15 steps. As you are counting, imagine the passing of 2000 years with each pace. During those spans of time, there were humans just like you and I who were getting on with the business of their lives. 
 
-Double that distance again, and we reach the Blombos caves in South Africa, where archeologists describe function-less artifacts that indicate (to archeologists, anyway) evidence of symbolic thinking. 
+Double that distance again, and we reach the Blombos caves in South Africa, where archaeologists describe function-less artifacts that indicate (to archaeologists, anyway) evidence of symbolic thinking. 
 
 Add another 15 paces and we arrive at Quafez burials of Hominins close relatives the neanderthals. The layout of a child's grave with artefacts and attentive orientation appears to signify a supernatural drama. Were these thoughts religious? 
 
 Finally, it will take us another 25 steps to reach the Herto finds in Ethiopia, where Tim White found skulls with etchings indicting that they were fastened to chords and swung. Were the rituals imagining an afterlife into which the dead travelled? 
 
-Of course, we can only speculate about the events of the deep ancestral human past. However, the fact that people were engaging in symobolic rituals is consistent with supernatual speculation.  Why was religion conserved all that time? 
+Of course, we can only speculate about the events of the deep ancestral human past. However, the fact that people were engaging in symbolic rituals is consistent with supernatural speculation.  Why was religion conserved all that time? 
 
 <aside>
 Netflix advice: watch Werner Herzog's *Caves of Dreams*, which describes this rediscovery of Chauvet in the late 20th century.
@@ -131,44 +173,61 @@ Netflix advice: watch Werner Herzog's *Caves of Dreams*, which describes this re
 ### Evolutionary Puzzle 3: Religion is pervasive, and growing 
 
 
-The Pew Foundation predicts that the proportion of the religious population will *grow* in the future. ^[For more information on the Pew Foundations forcasts for the religion in the future go [here](http://www.globalreligiousfutures.org/)]
+The Pew Foundation predicts that the proportion of the religious population will *grow* in the future. ^[For more information on the Pew Foundations forecasts for the religion in the future go [here](http://www.globalreligiousfutures.org/)]
 
 
-```{r  fc, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "\\label{fig:fc}Pew predicts the world we encounter in the decades ahead will be increasingly religious"}
+```{r  fc, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap= "\\label{fig:fc} Pew predicts the world we encounter in the decades ahead will be increasingly religious"}
 knitr::include_graphics("forcast.png")
 ```
 
 
-Roughtly speaking religious change at the population level is a function of two processes: 
-  1  religious conversion/deconversion
-  2. birthrates of religious and non-religous people
+Figure \@ref(fig:pewnz) shows Pew's predictive model for New Zealand's religious future.
 
-There are only two pathways for having a religion or losing religion. You are born into a family that has/doesn't have a religion.  You convert/de-convert.  Figure \@ref(ch) presents the expected number of children by for people living in New Zealand by religious affiliation. The redline is the biological replacement threshold of 2 x children (for a population to maintain its numbers each person must have an average of 2 x kids because each child has 2 x parents). 
 
-```{r ch, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="\\label{fig:ch}Highest levels  of religious identification predict more children"}
-knitr::include_graphics("children.png")
+```{r pewnz, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="\\label{fig:pewnz} Highest levels of religious identification predict more children"}
+knitr::include_graphics("pewnz.png")
 ```
+
+Why might religious decline in New Zealand stabalise?
+
+Roughly speaking, religious change at the population level is a function of two processes: 
+
+  1. religious conversion/deconversion
+  2. birthrates of religious and non-religious people
+
+There are only two pathways for having a religion or losing religion. You are born into a family that has/doesn't have a religion.  You convert/de-convert.  Figure \@ref(fig:ch) presents the expected number of children by for people living in New Zealand by religious affiliation. The red line is the biological replacement threshold of 2 x children (for a population to maintain its numbers each person must have an average of 2 x kids because each child has 2 x parents). 
+
+```{r ch, layout="l-body-outset", fig.width=6, fig.height=1.5, fig.cap="\\label{fig:ch} Highest levels of religious identification predict more children"}
+knitr::include_graphics("child.png")
+```
+
+
+
+
 
 ### Religion in your backyard
 
+Though not an evolutionary puzzle, it is important to understand religion because it is a common feature of life in our communities. The following images are from a website that Nick Young and I put together a few years ago: https://uoa-eresearch.github.io/religion/churches.html
 
-```{r ch_wl, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:ch_wl}Places of faith in Wellington"}
+What do the distributions of churches in Wellington suggest to you about the role of religion in our communities? 
+
+```{r chwl, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:chwl} Places of faith in Wellington"}
 knitr::include_graphics("ch_wl.png")
 ```
 
 
-```{r  ch_hutt, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:ch_hutt}Places of faith in Upper Hutte"}
+```{r  chhutt, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:chhutt} Places of faith in Upper Hutt"}
 knitr::include_graphics("ch_hutt.png")
 ```
 
 
-```{r  ch_petone, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:ch_petone}Places of faith in Petone"}
+```{r  chpetone, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:chpetone}Places of faith in Petone"}
 knitr::include_graphics("ch_petone.png")
 ```
 
+Figure \@ref(fig:alnoor) is another map that Nick and I created with Tony Green from the Al Noor Mosque in Christchurch. What does the map indicate to you about the cultural diversity of the Muslim community at the Al Noor Mosque? We will return to these question later in the course. 
 
-
-```{r  alnoor, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:alnoor}Diversity of one mosque: Al Noor (Christchurch"}
+```{r  alnoor, layout="l-body-outset",fig.width=6, fig.height=1.5, fig.cap="\\label{fig:alnoor}Diversity of one mosque: Al Noor (Christchurch)"}
 knitr::include_graphics("alnoor.png")
 ```
 
@@ -200,6 +259,7 @@ knitr::include_graphics("bb.png")
 
 
 ## Slide deck
+The slides are to facilitate discussion during our seminar.
 
 Click [here](slides_1.html) to go to the slide deck.
 
