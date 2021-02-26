@@ -1,19 +1,11 @@
 ---
 title: "Template for Article Review"
-description: |
-  Use this template as a guide for writing your article reviews
-author:
-  - name: Joseph Bulbulia
-    url: https://josephbulbulia.netlify.app
-    affiliation: Victoria University of Wellington
-    affiliation_url: https://www.wgtn.ac.nz
-    orcid_id: 0000-0002-5861-2056
-date: 2021-FEB-14
-bibliography: bibliography.bib
+author: ''
+date: ''
 output:
-  distill::distill_article:
-    self_contained: false
-    toc: true
+  word_document: default
+  html_document: default
+  pdf_document: default
 ---
 
 ## Article summary
@@ -42,7 +34,6 @@ A brief lay summary of the article:
   - What improvements might be made to the methods to strengthen the authors findings? 
   - (note: please read all supplemental files)
 
-
 ## Conclusions
 
   - What do the author's infer from their results? 
@@ -61,6 +52,4 @@ A brief lay summary of the article:
   - If the article is not suitable for publication in this journal, what constructive advice might you offer the authors. 
   
 
-
-See [@bulbulia2016standards].
 

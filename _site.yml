@@ -23,6 +23,8 @@ navbar:
       href: index.html
     - text: "Assessments"
       href: assessments.html
+    - text: "Templates"
+      href: index_templates.html
 output:
   distill::distill_article:
     toc: yes
