@@ -1,9 +1,10 @@
 ---
-title: "Template Index"
+title: "Telmate index"
 site: distill::distill_website
-listing:
+listing: 
   templates:
     - T_1
 ---
+
 
 
