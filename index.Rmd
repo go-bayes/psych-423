@@ -41,12 +41,12 @@ purrr::walk(posts, render)
 ```
 
 
-```{r render-everything_templates, include = FALSE, eval = FALSE}
-# Use to render all posts (article and slide deck) if needed
-library(rmarkdown)
-templates <- list.files(
-  "_templates", recursive = TRUE, pattern = ".Rmd", full.names = TRUE
-  )
-purrr::walk(templates, render)
-```
+<!-- ```{r render-everything_templates, include = FALSE, eval = FALSE} -->
+<!-- # Use to render all posts (article and slide deck) if needed -->
+<!-- library(rmarkdown) -->
+<!-- templates <- list.files( -->
+<!--   "_templates", recursive = TRUE, pattern = ".Rmd", full.names = TRUE -->
+<!--   ) -->
+<!-- purrr::walk(templates, render) -->
+<!-- ``` -->
 
