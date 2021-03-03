@@ -96,6 +96,10 @@ Ross, J.R. 1967. Constraints on variables in syntax. Doctoral dissertation, MIT 
 
 ## Travelling salesperson problems
 
+```{r  maps, layout="l-body-outset",  out.width = "1000px", fig.cap = ""}
+knitr::include_graphics("maps.jpg")
+```
+
 What is the shortest path bewtween 10 New Zealand cities? If we attempt the calculation by brute force, we end up with the the following:
 
 ```{r echo = TRUE}
@@ -113,9 +117,7 @@ factorial(60)/2
 ```
 
 
-```{r  maps, layout="l-body-outset",  out.width = "1000px", fig.cap = ""}
-knitr::include_graphics("maps.jpg")
-```
+
 
 For what appear to be simple tasks, the mind/brain quickly runs up against mathematical limits for information processing.
 
