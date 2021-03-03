@@ -112,13 +112,10 @@ It only takes counting paths between \~ 60 towns to arrive at the number of atom
 factorial(60)/2
 ```
 
-<aside>
 
 ```{r  maps, layout="l-body-outset",  out.width = "1000px", fig.cap = ""}
 knitr::include_graphics("maps.jpg")
 ```
-
-</aside>
 
 For what appear to be simple tasks, the mind/brain quickly runs up against mathematical limits for information processing.
 
