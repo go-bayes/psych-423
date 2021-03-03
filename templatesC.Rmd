@@ -28,6 +28,13 @@ output:
 
 ## Assessment Criteria for the Article Review 
 
-### EXCEL
-[Click here for Excel Spreadsheet](https://www.dropbox.com/s/ikymfyuiqfdzt64/423_peer_review_marking_templated.xlsx?dl=0)
+[Click here for Criteria](https://www.dropbox.com/s/ikymfyuiqfdzt64/423_peer_review_marking_templated.xlsx?dl=0)
+
+## Link to Marsden 1-pager template
+[Marsden one-pager template](https://www.dropbox.com/s/37ugg9varpc3b9y/2ab%20eoi.doc?dl=0)
+
+## Link to Marsden 1-pager example
+In addition one-page abstract + references, include a page 
+[Marsden one-pager-example](https://www.dropbox.com/s/b6nujts971zksdo/example_marsden.pdf?dl=0)
+
 
