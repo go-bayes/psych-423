@@ -13,6 +13,8 @@ _posts/**/*_files/
 docs/templates/template_review_files/*
 docs/templates/**/*.html
 _posts/**/*_files/
+_posts/*.pdf
+docs/posts/**/*.pdf
 docs/templates/template_grant_files/
 templates/template_grant_files/*
 *.xlsx

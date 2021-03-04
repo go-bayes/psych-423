@@ -121,6 +121,7 @@ factorial(60)/2
 
 For what appear to be simple tasks, the mind/brain quickly runs up against mathematical limits for information processing.
 
+
 ## Implications
 
 What are the implications fof combinatorial explosion and the frame problem for psychology? (principle of consistency?)
@@ -233,6 +234,15 @@ knitr::include_graphics("dog.png")
 ## My interview of Stewart Guthrie a few years ago
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zSiSwgZej04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Lecture slides
+
+
+[PDF link to lecture slides](https://www.dropbox.com/s/4gs3gavgzd3bzi3/2.evolution_psychology_anthropomorphism.pdf?dl=0)
+
+[PPT link to lecture slides](https://www.dropbox.com/s/96g0r1piz2stuz2/2.evolution_psychology_anthropomorphism.pptx?dl=0)
+
 
 
 ## Links to readings
