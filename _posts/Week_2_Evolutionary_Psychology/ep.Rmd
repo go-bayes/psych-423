@@ -220,9 +220,9 @@ knitr::include_graphics("face2.png")
 
 ## Darwin on Anthropomorphism
 
-> 'My dod, a full-grown and very sensible animal was lying on the law during a hot and still day; but at a little distance a slight breeze occasionally moved an open parasol, which would have been wholly disregarded by the dog, had anyone stood near it. As it was, every time that the parasol slightly moved, the dog growled fiercely and barked. He must, I think, have reasoned to himself in a rapid and unconscious manner, that movement without any apparent cause indicated the presence of some strange living agent, and no stranger had a right to be on his territory.' 
+> 'My dog, a full-grown and very sensible animal was lying on the lawn during a hot and still day; but at a little distance a slight breeze occasionally moved an open parasol, which would have been wholly disregarded by the dog, had anyone stood near it. As it was, every time that the parasol slightly moved, the dog growled fiercely and barked. He must, I think, have reasoned to himself in a rapid and unconscious manner, that movement without any apparent cause indicated the presence of some strange living agent, and no stranger had a right to be on his territory.' 
 >
-> -- Descent of Man, p.67
+> -- Charles Darwin **Descent of Man**, p.67
 
 
 ```{r  dog, layout="l-body-outset",  out.width = "1000px", fig.cap = ""}
