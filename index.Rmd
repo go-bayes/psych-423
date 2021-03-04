@@ -1,20 +1,20 @@
 ---
-title: "VUW Psych 423: Culture and Social Behaviour"
+title: 'VUW Psych 423: Culture and Social Behaviour'
 site: distill::distill_website
-listing: 
+listing:
   posts:
-    - Week_1_Introduction
-    - Week_2_Evolutionary_Psychology
-    - Week_3_Development
-    - Week_4_Sacrifice
-    - Week_5_Rituals
-    - Week_6_Cultural_Evolution
-    - Week_7_Reproduction
-    - Week_8_Gods
-    - Week_9_Atheism
-    - Week10_Ecology_Beliefs
-    - Week11_New_Zealand
-    - Week12_Wrap_Up
+  - Week_1_Introduction
+  - Week_2_Evolutionary_Psychology
+  - Week_3_Development
+  - Week_4_Sacrifice
+  - Week_5_Rituals
+  - Week_6_Cultural_Evolution
+  - Week_7_Reproduction
+  - Week_8_Gods
+  - Week_9_Atheism
+  - Week10_Ecology_Beliefs
+  - Week11_New_Zealand
+  - Week12_Wrap_Up
 ---
 
 ```{r setup, include=FALSE}

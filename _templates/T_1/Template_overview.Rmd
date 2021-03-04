@@ -15,6 +15,11 @@ output:
     highlight_downlit: false
 ---
 
+## Submission 
+
+**ALL ASSESSMENTS SHOULD BE SUBMITTED ON BLACKBOARD**
+
+
 ## Link to Article Review Template
 
 ### PDF
