@@ -5,7 +5,7 @@ description: |
 output_dir: "docs"
 base_url: https://github.com/go-bayes/github.io-423-culture
 repository_url: https://github.com/go-bayes/github.io-423-culture
-creative_commons: CC BY
+creative_commons: CC BY-NC-SA
 google_analytics: "G-X058WW5WJZ"
 twitter:
   site: "@go_bayes"
