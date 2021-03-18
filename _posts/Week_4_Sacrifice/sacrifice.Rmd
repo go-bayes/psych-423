@@ -31,6 +31,14 @@ knitr::opts_chunk$set(
 knitr::include_graphics("f1.png")
 ```
 
+## Link to lecture
+
+[Here](https://www.dropbox.com/s/338fdwcv9hqjdbx/REL226.PsychReligion.Lect.7.Signaling.JB.pptx?dl=0)
+
+**Video**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LnernD8EjUI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 
 ## Links to readings
 

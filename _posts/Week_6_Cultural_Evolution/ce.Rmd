@@ -31,6 +31,20 @@ knitr::opts_chunk$set(
 knitr::include_graphics("f1.png")
 ```
 
+## Lecture
+
+
+### Oliver Sheehan's slides on cultural evolution (Oliver is a lead researcher for Pulotu)
+
+[Lecture](https://www.dropbox.com/s/z0ugxpxo7v8ifdw/Lecture%208%20How%20did%20religion%20evolve%20in%20the%20Pacific.pptx?dl=0)
+
+
+## Link to Pulotu
+
+[Link](https://pulotu.shh.mpg.de/)
+
+
+
 ## Links to readings
 
 

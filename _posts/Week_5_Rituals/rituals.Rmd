@@ -32,6 +32,11 @@ knitr::include_graphics("f.png")
 ```
 
 
+## Link to the lecture
+
+[Here](https://www.dropbox.com/s/uc9j5lm7psxexhz/423.Rituals.pptx?dl=0)
+
+
 ## Links to readings
 
 
