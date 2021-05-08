@@ -3,7 +3,9 @@ title: "Joseph Bulbulia"
 description: "Contact"
 image: "jb.jpg"
 links:
-  - label: Personal webpage
+  - label: CV
+    url: "https://josephbulbulia.netlify.app/files/bulbuliaCV.pdf"
+  - label: webpage
     url: "https://josephbulbulia.netlify.app/"
   - label: Work webpage
     url: "https://www.wgtn.ac.nz/psyc/about/staff/prof-joseph-bulbulia"
