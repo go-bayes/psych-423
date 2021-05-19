@@ -15,9 +15,9 @@ output:
     highlight_downlit: false
 ---
 
-## Submission
+## Submission 
 
-**All assessments should be submitted on Blackboard**
+**ALL ASSESSMENTS SHOULD BE SUBMITTED ON BLACKBOARD**
 
 
 ## Link to Article Review Template
@@ -57,11 +57,25 @@ output:
 [Click here](https://www.dropbox.com/s/37ugg9varpc3b9y/2AB%20EOI.doc?dl=0)
 
 ## Example of a one-page EOI
-[Click here](https://www.dropbox.com/s/kacha7gm1tc6xvx/example_marsden.pdf?dl=0)
+[Click here](https://www.dropbox.com/s/kacha7gm1tc6xvx/exampleonepager.pdf?dl=0)
+
+
+## Guidelines and Template for Marsden Full Proposal (2013 -- note the headings in section 2 have changed since 2013)
+[Click here](https://www.dropbox.com/s/wb9wfyedtc3m1mh/TEMPLATE_SDSection2.pdf?dl=0)
+
+## Example of a Marsden Full Proposal (2013)
+[Click here](https://www.dropbox.com/s/nxfadzqr0gz0z3u/example_long.pdf?dl=0)
+
+## For help with your Vision Mātauranga statement
+You may contact our School of Psychology Kaiāwhina Albert-Tibble: 
+[Website](https://www.wgtn.ac.nz/psyc/about/staff/albert-tibble)
+
+Email: albert.tibble@vuw.ac.nz
+DD:  +64 4 886 4437
 
 ## Instructions for the full grant proposal 
 
-(The following instructions are adapted form the Royals Society of New Zealand's Marden Grant)
+(The following instructions are adapted form the Royals Society of New Zealand Marden Grant)
 
 
 ### Section 1 Summary, Type of Research Activity
@@ -301,5 +315,8 @@ Proposals must be rigorous, and should have a basis in prior research and use a 
 
 Where relevant to the proposal:
 * Proposals should consider the relation of the research to the themes of Vision Mātauranga and, where relevant, how the project will engage with Māori.
+
+
+
 
 
