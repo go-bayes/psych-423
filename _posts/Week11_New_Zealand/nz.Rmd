@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
 
 ## New Zealand's religious diversity
 
-
+[Here](https://www.dropbox.com/s/94vvjt5qup6j4pz/Chelsey%20Gardiner_300441422_Presentation.pptx?dl=0)
 
 ```{r echo=F}
 knitr::include_graphics("f.png")
