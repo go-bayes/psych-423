@@ -1,15 +1,17 @@
 ---
 title: "Introduction"
-subtitle: "Course essentials"
 author: "Joseph Bulbulia, Victoria University"
-date: "2021-24-02"
-output: 
+date: '2021-24-02'
+output:
+  beamer_presentation:
+    incremental: no
   ioslides_presentation:
-    incremental: false
+    incremental: no
     transition: 0
-    widescreen: true
-    smaller: true
+    widescreen: yes
+    smaller: yes
     css: styles.css
+subtitle: Course essentials
 ---
 
 ```{r setup, include=FALSE}
@@ -40,7 +42,7 @@ Welcome!
 
 <div class="notes">
 Greetings everyone, welcome to Psyc 423: Culture and Social Behaviour.
-I'm Joseph Bulbulia and I will be your instructor 
+I'm Joseph Bulbulia and I will be your instructor. 
 </div>
 
 

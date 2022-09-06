@@ -20,47 +20,47 @@ output:
 **ALL ASSESSMENTS SHOULD BE SUBMITTED ON BLACKBOARD**
 
 
-## Link to Article Review Template
+<!-- ## Link to Article Review Template -->
 
-### PDF
-[Click for PDF](https://www.dropbox.com/s/otxtm6hnq6kep7p/template_review.pdf?dl=0)
+<!-- ### PDF -->
+<!-- [Click for PDF](https://www.dropbox.com/s/otxtm6hnq6kep7p/template_review.pdf?dl=0) -->
 
-### DOC
-[Click for .docx](https://www.dropbox.com/s/187nazd8bkn85fp/template_review.docx?dl=0)
+<!-- ### DOC -->
+<!-- [Click for .docx](https://www.dropbox.com/s/187nazd8bkn85fp/template_review.docx?dl=0) -->
 
-### RMD
-[Click for .Rmd](https://www.dropbox.com/s/20u76gtecn5yn20/template_review.Rmd?dl=0)
+<!-- ### RMD -->
+<!-- [Click for .Rmd](https://www.dropbox.com/s/20u76gtecn5yn20/template_review.Rmd?dl=0) -->
 
 
-### Asssesment criteria on the seminar participation reports:
+<!-- ### Asssesment criteria on the seminar participation reports: -->
 
-  - Clarity -- 33.33%
-  - Creativity -- 33.34%
-  - Insight -- 33.33%
+<!--   - Clarity -- 33.33% -->
+<!--   - Creativity -- 33.34% -->
+<!--   - Insight -- 33.33% -->
 
-### Marking criteria on the seminar participation reports (journals):
+<!-- ### Marking criteria on the seminar participation reports (journals): -->
 
-  - Clarity -- 33.33%
-  - Creativity -- 33.34%
-  - Insight -- 33.33%
+<!--   - Clarity -- 33.33% -->
+<!--   - Creativity -- 33.34% -->
+<!--   - Insight -- 33.33% -->
 
-## Assessment Criteria for the Article Review 
+<!-- ## Assessment Criteria for the Article Review  -->
 
-### EXCEL
-[Click here for Excel Spreadsheet](https://www.dropbox.com/s/ikymfyuiqfdzt64/423_peer_review_marking_templated.xlsx?dl=0)
+<!-- ### EXCEL -->
+<!-- [Click here for Excel Spreadsheet](https://www.dropbox.com/s/ikymfyuiqfdzt64/423_peer_review_marking_templated.xlsx?dl=0) -->
 
 
 ## GRANT PROPOSAL 
 
-## Link to the one-page EOI template
+<!-- ## Link to the one-page EOI template -->
 
-[Click here](https://www.dropbox.com/s/37ugg9varpc3b9y/2AB%20EOI.doc?dl=0)
+<!-- [Click here](https://www.dropbox.com/s/37ugg9varpc3b9y/2AB%20EOI.doc?dl=0) -->
 
-## Example of a one-page EOI
-[Click here](https://www.dropbox.com/s/kacha7gm1tc6xvx/exampleonepager.pdf?dl=0)
+<!-- ## Example of a one-page EOI -->
+<!-- [Click here](https://www.dropbox.com/s/kacha7gm1tc6xvx/exampleonepager.pdf?dl=0) -->
 
 
-## Guidelines and Template for Marsden Full Proposal (2013 -- note the headings in section 2 have changed since 2013)
+## Guidelines and Template for Marsden Full Proposal (2013 -- note the headings in Section 2 have changed since 2013)
 [Click here](https://www.dropbox.com/s/wb9wfyedtc3m1mh/TEMPLATE_SDSection2.pdf?dl=0)
 
 ## Example of a Marsden Full Proposal (2013)
@@ -77,10 +77,14 @@ DD:  +64 4 886 4437
 
 (The following instructions are adapted form the Royals Society of New Zealand Marden Grant)
 
+Note that your instructions are exactly those everyone applying for Marden Foundation grant receives.  
+
+I will, however, **bold** key information. 
+
 
 ### Section 1 Summary, Type of Research Activity
 
-These have been carried over from the EOI for reference. However please note that the full proposal summary (up to 200 words in length) is different from the shorter summary required in the EOI, both in terms of length and the intended audience. It should summarise the proposed research in straightforward language, but without loss of accuracy or excessive over-simplification. Note that this will be made publicly available should the proposal be successful, and may be published as part of the Marsden Fund’s publicity.
+These have been carried over from the EOI for reference. However please note that the full proposal summary (**up to 200 words in length**) is different from the shorter summary required in the EOI, both in terms of length and the intended audience. It should summarise the proposed research in straightforward language, but without loss of accuracy or excessive over-simplification. Note that this will be made publicly available should the proposal be successful, and may be published as part of the Marsden Fund’s publicity.
 
 If the summary contains confidential or sensitive material, please indicate this at the summary start: “This summary contains sensitive or confidential information and will be released when the contract is completed”.
 
@@ -88,20 +92,20 @@ As for the EOI, the type of research activity is not accessible to anyone involv
 
 ### Sections 2a – 2d: Background, Overall Aim, Proposed Research and Vision Mātauranga
 
-If no Vision Mātauranga theme is identified in Section 3, the total page limit for this section is five pages, with no set limit for each section within this.
+**If no Vision Mātauranga theme is identified in Section 3, the total page limit for this section is five pages, with no set limit for each section within this.**
 
-If one or more Vision Mātauranga theme is identified in Section 3, the total page limit for this section is six pages, with no set limit for each section within this.
+**If one or more Vision Mātauranga theme is identified in Section 3, the total page limit for this section is six pages*** with no set limit for each section within this.
 Please read the definitions of these sections clearly, and avoid repetition.
 
 #### Section 2a: Background
 
-Use this section to give a context for the proposal by summarising in plain language the state of knowledge in the field.
+Use this section to give a context for the proposal by **summarising in plain language the state of knowledge in the field.**
 
 #### Section 2b: Overall Aim of the Research
-Use this section to state the general goals and specific objectives of the research proposal. Outline the potential for significant scholarly impact of your proposal (incorporating novelty, originality, insight and ambition).
+Use this section to state **the general goals and specific objectives of the research proposal. Outline the potential for significant scholarly impact of your proposal (incorporating novelty, originality, insight and ambition).**
 
 #### Section 2c: Proposed Research
-This section should cover, where appropriate, the hypotheses being tested, the methodology to be used, sampling design, and methods of data analysis. Please ensure that your description covers the period of funding sought (up to three years), and that it includes contributions by collaborators and postgraduate students (if any).
+This section should cover, where appropriate, **the hypotheses being tested,** the **methodology** to be used, sampling design, and methods of data analysis. Please ensure that your description covers the period of funding sought (up to three years), and that it includes contributions by collaborators and postgraduate students (if any).
 
 If you identify one or more Vision Mātauranga themes in Section 3, please elaborate here how this fits in with your proposed research. For example, you may wish to discuss consultations and linkages, relevance, conceptual framework and/or proposal design, and outcomes (in addition to statements in Section 2d).
 
@@ -111,7 +115,7 @@ If the proposed research requires ethics approval, please use this section to sh
 
 #### Section 2d: Vision Mātauranga
 
-Please refer to earlier guidelines on Vision Mātauranga.
+**Please refer to earlier guidelines on Vision Mātauranga.**
 
 If you identify one or more Vision Mātauranga themes in Section 3, please include discussion of this within Section 2d, for example, on consultation and linkages, relevance, conceptual framework and/or proposal design, and outcomes.
 
@@ -187,7 +191,7 @@ At the Full Proposal round, up to one additional page will be available for stat
 
 How do I decide whether to include a Vision Mātauranga statement in my proposal?
 
-A Vision Mātauranga statement must be included for all research that has relevance for Māori. The research category descriptions outlined in the next section may help you decide if this applies to your project. Please note, however, that those categories are fluid, there may well be overlap between them, and not every point in each category need apply.
+**A Vision Mātauranga statement must be included for all research that has relevance for Māori.** The research category descriptions outlined in the next section may help you decide if this applies to your project. Please note, however, that those categories are fluid, there may well be overlap between them, and not every point in each category need apply.
 
 #### Categories of Research
 
@@ -237,7 +241,7 @@ The work contributes strongly to Māori (e.g., iwi/hapū, organisations) aspirat
 
 ### IV.  Developing a Vision Mātauranga statement
 
-It is important to keep in mind that there is no single approach or prescription for Vision Mātauranga: one size does not fit all and there are many possible ways of addressing Vision Mātauranga. Vision Mātauranga should not, however, be seen as an add-on, nor should it be treated as separate from the research, methods or people involved in the project. A holistic approach that considers reciprocity and relationships is therefore desirable.
+**It is important to keep in mind that there is no single approach or prescription for Vision Mātauranga:** one size does not fit all and there are many possible ways of addressing Vision Mātauranga. Vision Mātauranga should not, however, be seen as an add-on, nor should it be treated as separate from the research, methods or people involved in the project. A holistic approach that considers reciprocity and relationships is therefore desirable.
 
 Vision Mātauranga does not begin and end with your Vision Mātauranga statement. You should document how you have considered Vision Mātauranga and demonstrate applicable actions and relationships throughout the research. The following questions may be useful to consider when conceptualising and writing your project:
 
