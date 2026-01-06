@@ -395,8 +395,8 @@
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -725,6 +725,7 @@
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -765,9 +766,21 @@
     display: none !important;
   }
 
+  hr.section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0px;
+  }
+
+
+  d-byline {
+    border-top: none;
+  }
+
   d-article {
     padding-top: 2.5rem;
     padding-bottom: 30px;
+    border-top: none;
   }
 
   d-appendix {
@@ -862,6 +875,11 @@
   d-article div.sourceCode pre {
     padding-left: 18px;
     font-size: 14px;
+  }
+
+  /* tweak for Pandoc numbered line within distill */
+  d-article pre.numberSource code > span {
+      left: -2em;
   }
 
   d-article pre {
@@ -1623,6 +1641,12 @@
     // create d-title
     $('.d-title').changeElementType('d-title');
 
+    // separator
+    var separator = '<hr class="section-separator" style="clear: both"/>';
+    // prepend separator above appendix
+    $('.d-byline').before(separator);
+    $('.d-article').before(separator);
+
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
@@ -1700,8 +1724,9 @@
     $('.distill-force-highlighting-css').parent().remove();
 
     // remove empty line numbers inserted by pandoc when using a
-    // custom syntax highlighting theme
-    $('code.sourceCode a:empty').remove();
+    // custom syntax highlighting theme, except when numbering line
+    // in code chunk
+    $('pre:not(.numberLines) code.sourceCode a:empty').remove();
 
     // load distill framework
     load_distill_framework();
@@ -1727,12 +1752,13 @@
       // add orcid ids
       $('.authors-affiliations').find('.author').each(function(i, el) {
         var orcid_id = front_matter.authors[i].orcidID;
+        var author_name = front_matter.authors[i].author
         if (orcid_id) {
           var a = $('<a></a>');
           a.attr('href', 'https://orcid.org/' + orcid_id);
           var img = $('<img></img>');
           img.addClass('orcid-id');
-          img.attr('alt', 'ORCID ID');
+          img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
           img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
           a.append(img);
           $(this).append(a);
@@ -1797,15 +1823,21 @@
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2004,7 +2036,7 @@
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2061,16 +2093,14 @@
 
 <div class="d-title">
 <h1>Templates</h1>
+
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
 </div>
 
 <div class="d-byline">
-  Joseph Bulbulia <a href="https://josephbulbulia.netlify.app"
-class="uri">https://josephbulbulia.netlify.app</a> (Victoria University
-of Wellington)<a href="https://www.wgtn.ac.nz"
-class="uri">https://www.wgtn.ac.nz</a>
+  Joseph Bulbulia <a href="https://josephbulbulia.netlify.app" class="uri">https://josephbulbulia.netlify.app</a> (Victoria University of Wellington)<a href="https://www.wgtn.ac.nz" class="uri">https://www.wgtn.ac.nz</a>
   
 <br/>2021-FEB-25
 </div>
@@ -2081,56 +2111,27 @@ class="uri">https://www.wgtn.ac.nz</a>
 <h3>Contents</h3>
 <ul>
 <li><a href="#submission" id="toc-submission">Submission</a></li>
-<li><a href="#grant-proposal" id="toc-grant-proposal">GRANT
-PROPOSAL</a></li>
-<li><a
-href="#guidelines-and-template-for-marsden-full-proposal-2013-note-the-headings-in-section-2-have-changed-since-2013"
-id="toc-guidelines-and-template-for-marsden-full-proposal-2013-note-the-headings-in-section-2-have-changed-since-2013">Guidelines
-and Template for Marsden Full Proposal (2013 – note the headings in
-Section 2 have changed since 2013)</a></li>
-<li><a href="#example-of-a-marsden-full-proposal-2013"
-id="toc-example-of-a-marsden-full-proposal-2013">Example of a Marsden
-Full Proposal (2013)</a></li>
-<li><a href="#for-help-with-your-vision-mātauranga-statement"
-id="toc-for-help-with-your-vision-mātauranga-statement">For help with
-your Vision Mātauranga statement</a></li>
-<li><a href="#instructions-for-the-full-grant-proposal"
-id="toc-instructions-for-the-full-grant-proposal">Instructions for the
-full grant proposal</a>
+<li><a href="#grant-proposal" id="toc-grant-proposal">GRANT PROPOSAL</a></li>
+<li><a href="#guidelines-and-template-for-marsden-full-proposal-2013-note-the-headings-in-section-2-have-changed-since-2013" id="toc-guidelines-and-template-for-marsden-full-proposal-2013-note-the-headings-in-section-2-have-changed-since-2013">Guidelines and Template for Marsden Full Proposal (2013 – note the headings in Section 2 have changed since 2013)</a></li>
+<li><a href="#example-of-a-marsden-full-proposal-2013" id="toc-example-of-a-marsden-full-proposal-2013">Example of a Marsden Full Proposal (2013)</a></li>
+<li><a href="#for-help-with-your-vision-mātauranga-statement" id="toc-for-help-with-your-vision-mātauranga-statement">For help with your Vision Mātauranga statement</a></li>
+<li><a href="#instructions-for-the-full-grant-proposal" id="toc-instructions-for-the-full-grant-proposal">Instructions for the full grant proposal</a>
 <ul>
-<li><a href="#section-1-summary-type-of-research-activity"
-id="toc-section-1-summary-type-of-research-activity">Section 1 Summary,
-Type of Research Activity</a></li>
-<li><a
-href="#sections-2a-2d-background-overall-aim-proposed-research-and-vision-mātauranga"
-id="toc-sections-2a-2d-background-overall-aim-proposed-research-and-vision-mātauranga">Sections
-2a – 2d: Background, Overall Aim, Proposed Research and Vision
-Mātauranga</a></li>
+<li><a href="#section-1-summary-type-of-research-activity" id="toc-section-1-summary-type-of-research-activity">Section 1 Summary, Type of Research Activity</a></li>
+<li><a href="#sections-2a-2d-background-overall-aim-proposed-research-and-vision-mātauranga" id="toc-sections-2a-2d-background-overall-aim-proposed-research-and-vision-mātauranga">Sections 2a – 2d: Background, Overall Aim, Proposed Research and Vision Mātauranga</a></li>
 <li><a href="#resources" id="toc-resources">Resources:</a></li>
-<li><a href="#section-2h-ethical-or-regulatory-obligations"
-id="toc-section-2h-ethical-or-regulatory-obligations">Section 2h:
-Ethical or Regulatory Obligations</a></li>
-<li><a href="#social-research" id="toc-social-research">Social
-Research</a></li>
-<li><a href="#vision-mātauranga-updated-for-2020"
-id="toc-vision-mātauranga-updated-for-2020">Vision Mātauranga (Updated
-for 2020)</a></li>
-<li><a href="#iv.-developing-a-vision-mātauranga-statement"
-id="toc-iv.-developing-a-vision-mātauranga-statement">IV. Developing a
-Vision Mātauranga statement</a></li>
-<li><a href="#v.-vision-mātauranga-resources"
-id="toc-v.-vision-mātauranga-resources">V. Vision Mātauranga
-Resources</a></li>
+<li><a href="#section-2h-ethical-or-regulatory-obligations" id="toc-section-2h-ethical-or-regulatory-obligations">Section 2h: Ethical or Regulatory Obligations</a></li>
+<li><a href="#social-research" id="toc-social-research">Social Research</a></li>
+<li><a href="#vision-mātauranga-updated-for-2020" id="toc-vision-mātauranga-updated-for-2020">Vision Mātauranga (Updated for 2020)</a></li>
+<li><a href="#iv.-developing-a-vision-mātauranga-statement" id="toc-iv.-developing-a-vision-mātauranga-statement">IV. Developing a Vision Mātauranga statement</a></li>
+<li><a href="#v.-vision-mātauranga-resources" id="toc-v.-vision-mātauranga-resources">V. Vision Mātauranga Resources</a></li>
 </ul></li>
-<li><a href="#criteria-for-evaluating-the-eoi-and-long-grant-proposals"
-id="toc-criteria-for-evaluating-the-eoi-and-long-grant-proposals">Criteria
-for evaluating the EOI and long grant proposals</a></li>
+<li><a href="#criteria-for-evaluating-the-eoi-and-long-grant-proposals" id="toc-criteria-for-evaluating-the-eoi-and-long-grant-proposals">Criteria for evaluating the EOI and long grant proposals</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="submission">Submission</h2>
-<p><strong>ALL ASSESSMENTS SHOULD BE SUBMITTED ON
-BLACKBOARD</strong></p>
+<p><strong>ALL ASSESSMENTS SHOULD BE SUBMITTED ON BLACKBOARD</strong></p>
 <!-- ## Link to Article Review Template -->
 <!-- ### PDF -->
 <!-- [Click for PDF](https://www.dropbox.com/s/otxtm6hnq6kep7p/template_review.pdf?dl=0) -->
@@ -2154,376 +2155,149 @@ BLACKBOARD</strong></p>
 <!-- [Click here](https://www.dropbox.com/s/37ugg9varpc3b9y/2AB%20EOI.doc?dl=0) -->
 <!-- ## Example of a one-page EOI -->
 <!-- [Click here](https://www.dropbox.com/s/kacha7gm1tc6xvx/exampleonepager.pdf?dl=0) -->
-<h2
-id="guidelines-and-template-for-marsden-full-proposal-2013-note-the-headings-in-section-2-have-changed-since-2013">Guidelines
-and Template for Marsden Full Proposal (2013 – note the headings in
-Section 2 have changed since 2013)</h2>
-<p><a
-href="https://www.dropbox.com/s/wb9wfyedtc3m1mh/TEMPLATE_SDSection2.pdf?dl=0">Click
-here</a></p>
-<h2 id="example-of-a-marsden-full-proposal-2013">Example of a Marsden
-Full Proposal (2013)</h2>
-<p><a
-href="https://www.dropbox.com/s/nxfadzqr0gz0z3u/example_long.pdf?dl=0">Click
-here</a></p>
-<h2 id="for-help-with-your-vision-mātauranga-statement">For help with
-your Vision Mātauranga statement</h2>
-<p>You may contact our School of Psychology Kaiāwhina Albert-Tibble: <a
-href="https://www.wgtn.ac.nz/psyc/about/staff/albert-tibble">Website</a></p>
-<p>Email: <a href="mailto:albert.tibble@vuw.ac.nz"
-class="email">albert.tibble@vuw.ac.nz</a> DD: +64 4 886 4437</p>
-<h2 id="instructions-for-the-full-grant-proposal">Instructions for the
-full grant proposal</h2>
-<p>(The following instructions are adapted form the Royals Society of
-New Zealand Marden Grant)</p>
-<p>Note that your instructions are exactly those everyone applying for
-Marden Foundation grant receives.</p>
+<h2 id="guidelines-and-template-for-marsden-full-proposal-2013-note-the-headings-in-section-2-have-changed-since-2013">Guidelines and Template for Marsden Full Proposal (2013 – note the headings in Section 2 have changed since 2013)</h2>
+<p><a href="https://www.dropbox.com/s/wb9wfyedtc3m1mh/TEMPLATE_SDSection2.pdf?dl=0">Click here</a></p>
+<h2 id="example-of-a-marsden-full-proposal-2013">Example of a Marsden Full Proposal (2013)</h2>
+<p><a href="https://www.dropbox.com/s/nxfadzqr0gz0z3u/example_long.pdf?dl=0">Click here</a></p>
+<h2 id="for-help-with-your-vision-mātauranga-statement">For help with your Vision Mātauranga statement</h2>
+<p>You may contact our School of Psychology Kaiāwhina Albert-Tibble:
+<a href="https://www.wgtn.ac.nz/psyc/about/staff/albert-tibble">Website</a></p>
+<p>Email: <a href="mailto:albert.tibble@vuw.ac.nz" class="email">albert.tibble@vuw.ac.nz</a>
+DD: +64 4 886 4437</p>
+<h2 id="instructions-for-the-full-grant-proposal">Instructions for the full grant proposal</h2>
+<p>(The following instructions are adapted form the Royals Society of New Zealand Marden Grant)</p>
+<p>Note that your instructions are exactly those everyone applying for Marden Foundation grant receives.</p>
 <p>I will, however, <strong>bold</strong> key information.</p>
-<h3 id="section-1-summary-type-of-research-activity">Section 1 Summary,
-Type of Research Activity</h3>
-<p>These have been carried over from the EOI for reference. However
-please note that the full proposal summary (<strong>up to 200 words in
-length</strong>) is different from the shorter summary required in the
-EOI, both in terms of length and the intended audience. It should
-summarise the proposed research in straightforward language, but without
-loss of accuracy or excessive over-simplification. Note that this will
-be made publicly available should the proposal be successful, and may be
-published as part of the Marsden Fund’s publicity.</p>
-<p>If the summary contains confidential or sensitive material, please
-indicate this at the summary start: “This summary contains sensitive or
-confidential information and will be released when the contract is
-completed”.</p>
-<p>As for the EOI, the type of research activity is not accessible to
-anyone involved in the assessment of the proposals.</p>
-<h3
-id="sections-2a-2d-background-overall-aim-proposed-research-and-vision-mātauranga">Sections
-2a – 2d: Background, Overall Aim, Proposed Research and Vision
-Mātauranga</h3>
-<p><strong>If no Vision Mātauranga theme is identified in Section 3, the
-total page limit for this section is five pages, with no set limit for
-each section within this.</strong></p>
-<p><strong>If one or more Vision Mātauranga theme is identified in
-Section 3, the total page limit for this section is six pages</strong>*
-with no set limit for each section within this. Please read the
-definitions of these sections clearly, and avoid repetition.</p>
+<h3 id="section-1-summary-type-of-research-activity">Section 1 Summary, Type of Research Activity</h3>
+<p>These have been carried over from the EOI for reference. However please note that the full proposal summary (<strong>up to 200 words in length</strong>) is different from the shorter summary required in the EOI, both in terms of length and the intended audience. It should summarise the proposed research in straightforward language, but without loss of accuracy or excessive over-simplification. Note that this will be made publicly available should the proposal be successful, and may be published as part of the Marsden Fund’s publicity.</p>
+<p>If the summary contains confidential or sensitive material, please indicate this at the summary start: “This summary contains sensitive or confidential information and will be released when the contract is completed”.</p>
+<p>As for the EOI, the type of research activity is not accessible to anyone involved in the assessment of the proposals.</p>
+<h3 id="sections-2a-2d-background-overall-aim-proposed-research-and-vision-mātauranga">Sections 2a – 2d: Background, Overall Aim, Proposed Research and Vision Mātauranga</h3>
+<p><strong>If no Vision Mātauranga theme is identified in Section 3, the total page limit for this section is five pages, with no set limit for each section within this.</strong></p>
+<p><strong>If one or more Vision Mātauranga theme is identified in Section 3, the total page limit for this section is six pages</strong>* with no set limit for each section within this.
+Please read the definitions of these sections clearly, and avoid repetition.</p>
 <h4 id="section-2a-background">Section 2a: Background</h4>
-<p>Use this section to give a context for the proposal by
-<strong>summarising in plain language the state of knowledge in the
-field.</strong></p>
-<h4 id="section-2b-overall-aim-of-the-research">Section 2b: Overall Aim
-of the Research</h4>
-<p>Use this section to state <strong>the general goals and specific
-objectives of the research proposal. Outline the potential for
-significant scholarly impact of your proposal (incorporating novelty,
-originality, insight and ambition).</strong></p>
+<p>Use this section to give a context for the proposal by <strong>summarising in plain language the state of knowledge in the field.</strong></p>
+<h4 id="section-2b-overall-aim-of-the-research">Section 2b: Overall Aim of the Research</h4>
+<p>Use this section to state <strong>the general goals and specific objectives of the research proposal. Outline the potential for significant scholarly impact of your proposal (incorporating novelty, originality, insight and ambition).</strong></p>
 <h4 id="section-2c-proposed-research">Section 2c: Proposed Research</h4>
-<p>This section should cover, where appropriate, <strong>the hypotheses
-being tested,</strong> the <strong>methodology</strong> to be used,
-sampling design, and methods of data analysis. Please ensure that your
-description covers the period of funding sought (up to three years), and
-that it includes contributions by collaborators and postgraduate
-students (if any).</p>
-<p>If you identify one or more Vision Mātauranga themes in Section 3,
-please elaborate here how this fits in with your proposed research. For
-example, you may wish to discuss consultations and linkages, relevance,
-conceptual framework and/or proposal design, and outcomes (in addition
-to statements in Section 2d).</p>
-<p>We are keen to see an increased emphasis on ethical considerations of
-the proposed research, particularly in the social sciences
-disciplines.</p>
-<p>If the proposed research requires ethics approval, please use this
-section to show that you have considered all of the ethics issues
-associated with your research. Your discussion should satisfy the panel
-that your processes are meaningful, and for social science disciplines
-in particular, that you have fully considered how your methods will
-affect the communities you are working with. It is important that you do
-not concentrate solely on your theoretical argument at the neglect of
-methodology, implementation, and community safety.</p>
+<p>This section should cover, where appropriate, <strong>the hypotheses being tested,</strong> the <strong>methodology</strong> to be used, sampling design, and methods of data analysis. Please ensure that your description covers the period of funding sought (up to three years), and that it includes contributions by collaborators and postgraduate students (if any).</p>
+<p>If you identify one or more Vision Mātauranga themes in Section 3, please elaborate here how this fits in with your proposed research. For example, you may wish to discuss consultations and linkages, relevance, conceptual framework and/or proposal design, and outcomes (in addition to statements in Section 2d).</p>
+<p>We are keen to see an increased emphasis on ethical considerations of the proposed research, particularly in the social sciences disciplines.</p>
+<p>If the proposed research requires ethics approval, please use this section to show that you have considered all of the ethics issues associated with your research. Your discussion should satisfy the panel that your processes are meaningful, and for social science disciplines in particular, that you have fully considered how your methods will affect the communities you are working with. It is important that you do not concentrate solely on your theoretical argument at the neglect of methodology, implementation, and community safety.</p>
 <h4 id="section-2d-vision-mātauranga">Section 2d: Vision Mātauranga</h4>
-<p><strong>Please refer to earlier guidelines on Vision
-Mātauranga.</strong></p>
-<p>If you identify one or more Vision Mātauranga themes in Section 3,
-please include discussion of this within Section 2d, for example, on
-consultation and linkages, relevance, conceptual framework and/or
-proposal design, and outcomes.</p>
-<p>Statements on Vision Mātauranga should be contained within Section
-2d, following the description of research (Sections 2a-2c). This is to
-enable Vision Mātauranga to be more easily integrated into the
-conceptual framework and/or research design. Where Vision Mātauranga is
-appropriate to a proposal, it can contribute to the overall
-excellence.</p>
-<p>Compliance aspects, such as access to culturally sensitive material
-and knowledge, should be covered in Section 2h, “Ethical or Regulatory
-Obligations”.</p>
-<p>Aspects of Vision Mātauranga relating to relevant experience can be
-included in the “Roles and Resources” section (2g) and can also be
-incorporated into sections 2a-2c.</p>
+<p><strong>Please refer to earlier guidelines on Vision Mātauranga.</strong></p>
+<p>If you identify one or more Vision Mātauranga themes in Section 3, please include discussion of this within Section 2d, for example, on consultation and linkages, relevance, conceptual framework and/or proposal design, and outcomes.</p>
+<p>Statements on Vision Mātauranga should be contained within Section 2d, following the description of research (Sections 2a-2c). This is to enable Vision Mātauranga to be more easily integrated into the conceptual framework and/or research design. Where Vision Mātauranga is appropriate to a proposal, it can contribute to the overall excellence.</p>
+<p>Compliance aspects, such as access to culturally sensitive material and knowledge, should be covered in Section 2h, “Ethical or Regulatory Obligations”.</p>
+<p>Aspects of Vision Mātauranga relating to relevant experience can be included in the “Roles and Resources” section (2g) and can also be incorporated into sections 2a-2c.</p>
 <h4 id="section-2e-references">Section 2e: References</h4>
-<p>References for the Background, Overall Aims, Proposed Research and
-Vision Mātauranga sections (Sections 2a-d) should be listed here in
-Section 2e, and should not exceed three pages in length.</p>
+<p>References for the Background, Overall Aims, Proposed Research and Vision Mātauranga sections (Sections 2a-d) should be listed here in Section 2e, and should not exceed three pages in length.</p>
 <h4 id="section-2f-timetable">Section 2f: Timetable</h4>
-<p>Describe in general terms the advances you hope to make in each year.
-It is acknowledged that this timetable may be revised as the research
-progresses.</p>
+<p>Describe in general terms the advances you hope to make in each year. It is acknowledged that this timetable may be revised as the research progresses.</p>
 <h3 id="resources">Resources:</h3>
-<p>Clearly state the resources required for the proposed research that
-the team will have access to. This is an opportunity to discuss the
-practical requirements of your proposed research. For example: Access to
-libraries/collections/archives; access to required
-instruments/equipment/techniques/materials; ability to do fieldwork
-(e.g. site access, assistance, etc.); access to pools of
-participants.</p>
-<p>If there are any special requirements for the proposed research,
-please explain how these will be met.</p>
-<h3 id="section-2h-ethical-or-regulatory-obligations">Section 2h:
-Ethical or Regulatory Obligations</h3>
-<p>Any permissions, approvals, etc., should be listed in this
-section.</p>
-<p>It is your responsibility to ensure that all ethical or regulatory
-obligations are met (for example, from ERMA, MPI, Animal Ethics, Human
-Ethics). It is also your responsibility to organise access to
-facilities, fieldwork sites, archives, materials etc. This section
-should make clear that you have anticipated or gained the necessary
-formal approvals for your intended research, for instance, Department of
-Conservation permits, ERMA permits, and so forth.</p>
-<p>Researchers should plan the necessary approvals well in advance, to
-ensure no delays to the project should it be funded. Researchers should
-contact their institutional ethics committee and research offices for
-further information. Researchers will need to provide information on the
-current state of their ethics approval.</p>
-<p>Note that only compliance aspects related to ethical or regulatory
-considerations should be covered here. Ethical considerations in the
-context of the research methodology should be discussed in detail in the
-Proposed Research section (2c), as mentioned previously.</p>
+<p>Clearly state the resources required for the proposed research that the team will have access to. This is an opportunity to discuss the practical requirements of your proposed research. For example: Access to libraries/collections/archives; access to required instruments/equipment/techniques/materials; ability to do fieldwork (e.g. site access, assistance, etc.); access to pools of participants.</p>
+<p>If there are any special requirements for the proposed research, please explain how these will be met.</p>
+<h3 id="section-2h-ethical-or-regulatory-obligations">Section 2h: Ethical or Regulatory Obligations</h3>
+<p>Any permissions, approvals, etc., should be listed in this section.</p>
+<p>It is your responsibility to ensure that all ethical or regulatory obligations are met (for example, from ERMA, MPI, Animal Ethics, Human Ethics). It is also your responsibility to organise access to facilities, fieldwork sites, archives, materials etc. This section should make clear that you have anticipated or gained the necessary formal approvals for your intended research, for instance, Department of Conservation permits, ERMA permits, and so forth.</p>
+<p>Researchers should plan the necessary approvals well in advance, to ensure no delays to the project should it be funded. Researchers should contact their institutional ethics committee and research offices for further information. Researchers will need to provide information on the current state of their ethics approval.</p>
+<p>Note that only compliance aspects related to ethical or regulatory considerations should be covered here. Ethical considerations in the context of the research methodology should be discussed in detail in the Proposed Research section (2c), as mentioned previously.</p>
 <h3 id="social-research">Social Research</h3>
-<p>Researchers collecting personal information should be aware of their
-obligations around obtaining consents, data security, maintaining the
-anonymity of individuals, sensitivity around cultural issues and all
-other ethical considerations as appropriate. If there is any
-uncertainty, researchers should consult their institutional ethics
-committee.</p>
-<p>There is a requirement that any researchers working with children
-follow the guidelines of their host institution’s child protection
-policy, in accord with section 19 of the Vulnerable Children’s Act 2014.
-Should the host institution not have a child protection policy,
-researchers should comply with the Society’s guidelines:</p>
-<p><a
-href="https://royalsociety.org.nz/who-we-are/our-rules-and-codes/policy-on-child-protection/child-protection-policy/"
-class="uri">https://royalsociety.org.nz/who-we-are/our-rules-and-codes/policy-on-child-protection/child-protection-policy/</a></p>
-<h3 id="vision-mātauranga-updated-for-2020">Vision Mātauranga (Updated
-for 2020)</h3>
-<p>These are the updated guidelines which were included in the 2020 EOI
-Guidelines. They are also available at <a
-href="https://www.royalsociety.org.nz/what-we-do/funds-and-opportunities/marsden/marsden-fund-application-process/submitting-a-proposal/vision-matauranga/"
-class="uri">https://www.royalsociety.org.nz/what-we-do/funds-and-opportunities/marsden/marsden-fund-application-process/submitting-a-proposal/vision-matauranga/</a></p>
+<p>Researchers collecting personal information should be aware of their obligations around obtaining consents, data security, maintaining the anonymity of individuals, sensitivity around cultural issues and all other ethical considerations as appropriate. If there is any uncertainty, researchers should consult their institutional ethics committee.</p>
+<p>There is a requirement that any researchers working with children follow the guidelines of their host institution’s child protection policy, in accord with section 19 of the Vulnerable Children’s Act 2014. Should the host institution not have a child protection policy, researchers should comply with the Society’s guidelines:</p>
+<p><a href="https://royalsociety.org.nz/who-we-are/our-rules-and-codes/policy-on-child-protection/child-protection-policy/" class="uri">https://royalsociety.org.nz/who-we-are/our-rules-and-codes/policy-on-child-protection/child-protection-policy/</a></p>
+<h3 id="vision-mātauranga-updated-for-2020">Vision Mātauranga (Updated for 2020)</h3>
+<p>These are the updated guidelines which were included in the 2020 EOI Guidelines. They are also available at <a href="https://www.royalsociety.org.nz/what-we-do/funds-and-opportunities/marsden/marsden-fund-application-process/submitting-a-proposal/vision-matauranga/" class="uri">https://www.royalsociety.org.nz/what-we-do/funds-and-opportunities/marsden/marsden-fund-application-process/submitting-a-proposal/vision-matauranga/</a></p>
 <h4 id="background">Background</h4>
-<p>Vision Mātauranga is a policy about innovation, opportunity and the
-creation of knowledge that highlights the potential contribution of
-Māori knowledge, resources and people.</p>
-<p><a
-href="https://royalsociety.org.nz/what-we-do/funds-and-opportunities/marsden/application/submitting-a-proposal/vision-matauranga/"
-class="uri">https://royalsociety.org.nz/what-we-do/funds-and-opportunities/marsden/application/submitting-a-proposal/vision-matauranga/</a></p>
-<p><a
-href="http://www.mbie.govt.nz/info-services/science-innovation/agencies-policies-budget-initiatives/vision-matauranga-policy/?searchterm=vision%20matauranga%2A"
-class="uri">http://www.mbie.govt.nz/info-services/science-innovation/agencies-policies-budget-initiatives/vision-matauranga-policy/?searchterm=vision%20matauranga%2A</a></p>
+<p>Vision Mātauranga is a policy about innovation, opportunity and the creation of knowledge that highlights the potential contribution of Māori knowledge, resources and people.</p>
+<p><a href="https://royalsociety.org.nz/what-we-do/funds-and-opportunities/marsden/application/submitting-a-proposal/vision-matauranga/" class="uri">https://royalsociety.org.nz/what-we-do/funds-and-opportunities/marsden/application/submitting-a-proposal/vision-matauranga/</a></p>
+<p><a href="http://www.mbie.govt.nz/info-services/science-innovation/agencies-policies-budget-initiatives/vision-matauranga-policy/?searchterm=vision%20matauranga%2A" class="uri">http://www.mbie.govt.nz/info-services/science-innovation/agencies-policies-budget-initiatives/vision-matauranga-policy/?searchterm=vision%20matauranga%2A</a></p>
 <h4 id="there-are-four-themes">There are four themes:</h4>
-<p>Indigenous Innovation, which involves contributing to economic growth
-through distinctive research and development;</p>
-<p>Taiao, which is concerned with achieving environmental sustainability
-through iwi and hapū relationships with land and sea;</p>
-<p>Hauora/Oranga, which centres around improving health and social
-wellbeing; and Mātauranga, which involves exploring indigenous
-knowledge.</p>
-<h4 id="vision-mātauranga-and-the-marsden-fund">Vision Mātauranga and
-the Marsden Fund</h4>
-<p>Please note that Vision Mātauranga is now included as an assessment
-criterion:</p>
-<p>Proposals should consider the relation of the research to the themes
-of Vision Mātauranga and, where relevant, how the project will engage
-with Māori.</p>
-<p>At the Full Proposal round, up to one additional page will be
-available for statements on Vision Mātauranga immediately following the
-description of research in Sections 2a-2c. This is to enable Vision
-Mātauranga to be more easily integrated into the conceptual framework
-and/or research design. Where Vision Mātauranga is appropriate to a
-proposal, it can contribute to the assessment of its overall
-excellence.</p>
-<p>How do I decide whether to include a Vision Mātauranga statement in
-my proposal?</p>
-<p><strong>A Vision Mātauranga statement must be included for all
-research that has relevance for Māori.</strong> The research category
-descriptions outlined in the next section may help you decide if this
-applies to your project. Please note, however, that those categories are
-fluid, there may well be overlap between them, and not every point in
-each category need apply.</p>
+<p>Indigenous Innovation, which involves contributing to economic growth through distinctive research and development;</p>
+<p>Taiao, which is concerned with achieving environmental sustainability through iwi and hapū relationships with land and sea;</p>
+<p>Hauora/Oranga, which centres around improving health and social wellbeing; and
+Mātauranga, which involves exploring indigenous knowledge.</p>
+<h4 id="vision-mātauranga-and-the-marsden-fund">Vision Mātauranga and the Marsden Fund</h4>
+<p>Please note that Vision Mātauranga is now included as an assessment criterion:</p>
+<p>Proposals should consider the relation of the research to the themes of Vision Mātauranga and, where relevant, how the project will engage with Māori.</p>
+<p>At the Full Proposal round, up to one additional page will be available for statements on Vision Mātauranga immediately following the description of research in Sections 2a-2c. This is to enable Vision Mātauranga to be more easily integrated into the conceptual framework and/or research design. Where Vision Mātauranga is appropriate to a proposal, it can contribute to the assessment of its overall excellence.</p>
+<p>How do I decide whether to include a Vision Mātauranga statement in my proposal?</p>
+<p><strong>A Vision Mātauranga statement must be included for all research that has relevance for Māori.</strong> The research category descriptions outlined in the next section may help you decide if this applies to your project. Please note, however, that those categories are fluid, there may well be overlap between them, and not every point in each category need apply.</p>
 <h4 id="categories-of-research">Categories of Research</h4>
-<p>The five categories identified below have been adapted from those on
-the National Science Challenge, Biological Heritage website <a
-href="https://bioheritage.nz/about-us/vision-matauranga/"
-class="uri">https://bioheritage.nz/about-us/vision-matauranga/</a>
-hosted by Manaaki Whenua Landcare Research. Please note that there may
-well be overlap between categories as in categories 2 and 3 in terms of
-the nature and degree of relevance to Māori.</p>
-<p>The original categories were set out by MBIE in information for the
-Endeavour Fund c. 2015.</p>
-<h5 id="research-with-no-specific-māori-component">1. Research with no
-specific Māori component</h5>
-<p>No mātauranga Māori (Māori knowledge) is used. Māori are not
-associated with the research process (e.g. not on any research
-management / advisory / governance panels, it is not inclusive of Māori
-land or institutions, nor the subject of any component of the research).
-Work is not likely to be of greater direct relevance to Māori than
-members of any other group. ##### 2. Research specifically relevant to
-Māori This category includes research projects where:</p>
-<p>There is specific relevance to Māori. Mātauranga Māori may be used in
-a minor way to guide the work and its relevance to Māori. It includes
-work that contributes to Māori aspirations and outcomes.</p>
+<p>The five categories identified below have been adapted from those on the National Science Challenge, Biological Heritage website <a href="https://bioheritage.nz/about-us/vision-matauranga/" class="uri">https://bioheritage.nz/about-us/vision-matauranga/</a> hosted by Manaaki Whenua Landcare Research. Please note that there may well be overlap between categories as in categories 2 and 3 in terms of the nature and degree of relevance to Māori.</p>
+<p>The original categories were set out by MBIE in information for the Endeavour Fund c. 2015.</p>
+<h5 id="research-with-no-specific-māori-component">1. Research with no specific Māori component</h5>
+<p>No mātauranga Māori (Māori knowledge) is used.
+Māori are not associated with the research process (e.g. not on any research management / advisory / governance panels, it is not inclusive of Māori land or institutions, nor the subject of any component of the research).
+Work is not likely to be of greater direct relevance to Māori than members of any other group.
+##### 2. Research specifically relevant to Māori
+This category includes research projects where:</p>
+<p>There is specific relevance to Māori.
+Mātauranga Māori may be used in a minor way to guide the work and its relevance to Māori.
+It includes work that contributes to Māori aspirations and outcomes.</p>
 <h5 id="research-involving-māori">3. Research involving Māori</h5>
 <p>This category includes research projects where:</p>
-<p>Mātauranga Māori may be incorporated in the project, but is not
-central to the project. Research is specifically and directly relevant
-to Māori and Māori are involved in the design and/or undertaking of the
-research. The work typically contributes to Māori (e.g., iwi / hapū,
-organisations) aspirations and outcomes.</p>
+<p>Mātauranga Māori may be incorporated in the project, but is not central to the project.
+Research is specifically and directly relevant to Māori and Māori are involved in the design and/or undertaking of the research.
+The work typically contributes to Māori (e.g., iwi / hapū, organisations) aspirations and outcomes.</p>
 <h5 id="māori-centred-research">4. Māori-centred research</h5>
 <p>This category includes research projects where:</p>
-<p>The project is Māori led, and where Mātauranga Māori is used
-alongside other knowledges (e.g. through frameworks, models, methods,
-tools, etc.). Kaupapa Māori research is a key focus of the project.
-Research is typically collaborative or consultative, with direct input
-from Māori groups, commonly including Māori researchers or a
-collaboration with Māori researchers or researchers under the
-guidance/mentoring of Māori. There is alignment with and contribution to
-Māori (e.g., iwi / hapū, organisations) aspirations.</p>
+<p>The project is Māori led, and where Mātauranga Māori is used alongside other knowledges (e.g. through frameworks, models, methods, tools, etc.).
+Kaupapa Māori research is a key focus of the project.
+Research is typically collaborative or consultative, with direct input from Māori groups, commonly including Māori researchers or a collaboration with Māori researchers or researchers under the guidance/mentoring of Māori.
+There is alignment with and contribution to Māori (e.g., iwi / hapū, organisations) aspirations.</p>
 <h5 id="kaupapa-māori-research">5. Kaupapa Māori research</h5>
 <p>This category includes research projects where:</p>
-<p>Mātauranga Māori is incorporated, used and understood, as a central
-focus of project and its findings.</p>
-<p>Research is grounded in te ao Māori and connected to Māori
-philosophies and principles. Research typically uses kaupapa Māori
-research methodologies.</p>
-<p>Te reo Māori may be a central feature to this kaupapa or research
-activity, and key researchers have medium to high cultural fluency or
-knowledge of tikanga and reo. The research is generally led by a Māori
-researcher; non-Indigenous researchers may carry out research under the
-guidance/mentoring of a Māori researcher. Māori participation
-(iwi/hapū/marae/individual) is high. The work contributes strongly to
-Māori (e.g., iwi/hapū, organisations) aspirations and outcomes and is
-mana enhancing.</p>
-<h3 id="iv.-developing-a-vision-mātauranga-statement">IV. Developing a
-Vision Mātauranga statement</h3>
-<p><strong>It is important to keep in mind that there is no single
-approach or prescription for Vision Mātauranga:</strong> one size does
-not fit all and there are many possible ways of addressing Vision
-Mātauranga. Vision Mātauranga should not, however, be seen as an add-on,
-nor should it be treated as separate from the research, methods or
-people involved in the project. A holistic approach that considers
-reciprocity and relationships is therefore desirable.</p>
-<p>Vision Mātauranga does not begin and end with your Vision Mātauranga
-statement. You should document how you have considered Vision Mātauranga
-and demonstrate applicable actions and relationships throughout the
-research. The following questions may be useful to consider when
-conceptualising and writing your project:</p>
-<p>Have you co-created the research topic/issue with an iwi or Māori
-organisation? What does working in partnership with iwi mean to you as
-researchers?</p>
-<p>To what extent have you discussed the research with Māori partners
-and agreed on the methodology you will use?</p>
-<p>Was there full disclosure and informed consent to the proposed
-research with Māori partners? How has that agreement/informed consent
-been agreed to?</p>
+<p>Mātauranga Māori is incorporated, used and understood, as a central focus of project and its findings.</p>
+<p>Research is grounded in te ao Māori and connected to Māori philosophies and principles.
+Research typically uses kaupapa Māori research methodologies.</p>
+<p>Te reo Māori may be a central feature to this kaupapa or research activity, and key researchers have medium to high cultural fluency or knowledge of tikanga and reo.
+The research is generally led by a Māori researcher; non-Indigenous researchers may carry out research under the guidance/mentoring of a Māori researcher.
+Māori participation (iwi/hapū/marae/individual) is high.
+The work contributes strongly to Māori (e.g., iwi/hapū, organisations) aspirations and outcomes and is mana enhancing.</p>
+<h3 id="iv.-developing-a-vision-mātauranga-statement">IV. Developing a Vision Mātauranga statement</h3>
+<p><strong>It is important to keep in mind that there is no single approach or prescription for Vision Mātauranga:</strong> one size does not fit all and there are many possible ways of addressing Vision Mātauranga. Vision Mātauranga should not, however, be seen as an add-on, nor should it be treated as separate from the research, methods or people involved in the project. A holistic approach that considers reciprocity and relationships is therefore desirable.</p>
+<p>Vision Mātauranga does not begin and end with your Vision Mātauranga statement. You should document how you have considered Vision Mātauranga and demonstrate applicable actions and relationships throughout the research. The following questions may be useful to consider when conceptualising and writing your project:</p>
+<p>Have you co-created the research topic/issue with an iwi or Māori organisation?
+What does working in partnership with iwi mean to you as researchers?</p>
+<p>To what extent have you discussed the research with Māori partners and agreed on the methodology you will use?</p>
+<p>Was there full disclosure and informed consent to the proposed research with Māori partners? How has that agreement/informed consent been agreed to?</p>
 <p>Has budget been disclosed and agreed to with Māori partners?</p>
-<p>Is there provision in that budget for Māori involvement, capability
-development and consultation?</p>
-<p>Is there appropriate Māori researcher involvement in the project,
-both in terms of PI/AIs and capability development?</p>
-<p>What provisions have you made to ensure there is advice from
-appropriate Māori organisations throughout the life of the research
-project?</p>
-<p>If there are concerns or disagreements with Māori partners, how are
-these to be resolved?</p>
-<p>What provisions have you made to ensure there is appropriate
-technology transfer to Māori partners as the research proceeds and as
-findings become available towards the end of the project?</p>
-<p>Are there benefits to Māori? What are they? And how have these been
-agreed with Māori partners?</p>
-<p>How is the project an opportunity to build the capacity of Māori
-researchers or students in your discipline?</p>
+<p>Is there provision in that budget for Māori involvement, capability development and consultation?</p>
+<p>Is there appropriate Māori researcher involvement in the project, both in terms of PI/AIs and capability development?</p>
+<p>What provisions have you made to ensure there is advice from appropriate Māori organisations throughout the life of the research project?</p>
+<p>If there are concerns or disagreements with Māori partners, how are these to be resolved?</p>
+<p>What provisions have you made to ensure there is appropriate technology transfer to Māori partners as the research proceeds and as findings become available towards the end of the project?</p>
+<p>Are there benefits to Māori? What are they? And how have these been agreed with Māori partners?</p>
+<p>How is the project an opportunity to build the capacity of Māori researchers or students in your discipline?</p>
 <p>How will you share the research outcomes with Māori?</p>
-<p>Has there been agreement about the intellectual property ownership of
-research findings with Māori partners?</p>
+<p>Has there been agreement about the intellectual property ownership of research findings with Māori partners?</p>
 <p>What is the nature of that agreement?</p>
-<p>Is there a need for members of the research team to be proficient in
-te reo? How has this aspect been addressed?</p>
-<p>Is there a Tiriti o Waitangi component or requirement in your
-research?</p>
+<p>Is there a need for members of the research team to be proficient in te reo? How has this aspect been addressed?</p>
+<p>Is there a Tiriti o Waitangi component or requirement in your research?</p>
 <p>Is the research mana enhancing?</p>
-<h3 id="v.-vision-mātauranga-resources">V. Vision Mātauranga
-Resources</h3>
-<p>Below you will find a non-exhaustive list of published resources that
-describe, discuss, and talk about how researchers have engaged with
-Vision Mātauranga and kaupapa Māori research. These range from early
-conceptions of Vision Mātauranga to more recent frameworks. The
-resources underscore the diverse ways Vision Mātauranga may be
-approached across disciplines and methodologies.</p>
-<p>Allen, W., Jamie M. Ataria, J. M., Apgar, J. M., Harmsworth, G., and
-Tremblay, L. A. (2009). Kia pono te mahi putaiao—doing science in the
-right spirit. Journal of the Royal Society of New Zealand, 39:4,
-239-242. DOI: 10.1080/03014220909510588</p>
-<p>Crawford, S. (2009). Matauranga Maori and western science: The
-importance of hypotheses, predictions and protocols, Journal of the
-Royal Society of New Zealand, 39:4, 163-166. DOI:
-10.1080/03014220909510571</p>
-<p>Broughton, D. (Te Aitanga-a-Hauiti, Taranaki, Ngāti Porou, Ngāpuhi),
-and McBreen, K. (Waitaha, Kāti Māmoe, Ngāi Tahu). (2015). Mātauranga
-Māori, tino rangatiratanga and the future of New Zealand science.
-Journal of the Royal Society of New Zealand, 45:2, 83-88. DOI:
-10.1080/03036758.2015.1011171</p>
-<p>Kana, F. and Tamatea, K. (2006). Sharing, listening, learning and
-developing understandings of Kaupapa Māori research by engaging with two
-Māori communities involved in education. Waikato Journal of Education,
-12, 9-20. <a
-href="https://researchcommons.waikato.ac.nz/bitstream/handle/10289/6198/Kana%20Sharing.pdf?sequence=3&amp;isAllowed=y"
-class="uri">https://researchcommons.waikato.ac.nz/bitstream/handle/10289/6198/Kana%20Sharing.pdf?sequence=3&amp;isAllowed=y</a></p>
-<p>Macfarlane, S., Macfarlane, A. and Gillon, G. (2015) Sharing the food
-baskets of knowledge: Creating space for a blending of streams. In A.
-Macfarlane, S. Macfarlane, M. Webber, (eds.), Sociocultural realities:
-Exploring new horizons. Christchurch: Canterbury University Press,
-52-67.</p>
-<p>Moewaka Barnes, H. (2006). Transforming Science: How our Structures
-Limit Innovation. Social Policy Journal of New Zealand Te Puna Whakaaro,
-29, 1-16. <a
-href="https://www.msd.govt.nz/documents/about-msd-and-our-work/publications-resources/journals-and-magazines/social-policy-journal/spj29/29-pages-1-16.pdf"
-class="uri">https://www.msd.govt.nz/documents/about-msd-and-our-work/publications-resources/journals-and-magazines/social-policy-journal/spj29/29-pages-1-16.pdf</a></p>
-<p>Pihama, L., Tiakiwai, S.-J., and Southey, K. (eds.). (2015). Kaupapa
-rangahau: A reader. A collection of readings from the Kaupapa Rangahau
-workshops series. (2nd ed.). Hamilton, New Zealand: Te Kotahi Research
-Institute. <a
-href="https://researchcommons.waikato.ac.nz/bitstream/handle/10289/11738/Kaupapa%20Rangahau%20-%20A%20Reader_2nd%20Edition.pdf?sequence=7&amp;isAllowed=y"
-class="uri">https://researchcommons.waikato.ac.nz/bitstream/handle/10289/11738/Kaupapa%20Rangahau%20-%20A%20Reader_2nd%20Edition.pdf?sequence=7&amp;isAllowed=y</a></p>
-<p>Smith, L. T., Maxwell, T. K., Puke, H., and Temara, P. (2016).
-Indigenous knowledge, methodology and mayhem: What is the role of
-methodology in producing indigenous insights? A discussion from
-Mātauranga Māori. Knowledge Cultures, 4(3), 131–156.</p>
-<h2
-id="criteria-for-evaluating-the-eoi-and-long-grant-proposals">Criteria
-for evaluating the EOI and long grant proposals</h2>
+<h3 id="v.-vision-mātauranga-resources">V. Vision Mātauranga Resources</h3>
+<p>Below you will find a non-exhaustive list of published resources that describe, discuss, and talk about how researchers have engaged with Vision Mātauranga and kaupapa Māori research. These range from early conceptions of Vision Mātauranga to more recent frameworks. The resources underscore the diverse ways Vision Mātauranga may be approached across disciplines and methodologies.</p>
+<p>Allen, W., Jamie M. Ataria, J. M., Apgar, J. M., Harmsworth, G., and Tremblay, L. A. (2009). Kia pono te mahi putaiao—doing science in the right spirit. Journal of the Royal Society of New Zealand, 39:4, 239-242.
+DOI: 10.1080/03014220909510588</p>
+<p>Crawford, S. (2009). Matauranga Maori and western science: The importance of hypotheses, predictions and protocols, Journal of the Royal Society of New Zealand, 39:4, 163-166.
+DOI: 10.1080/03014220909510571</p>
+<p>Broughton, D. (Te Aitanga-a-Hauiti, Taranaki, Ngāti Porou, Ngāpuhi), and McBreen, K. (Waitaha, Kāti Māmoe, Ngāi Tahu). (2015). Mātauranga Māori, tino rangatiratanga and the future of New Zealand science. Journal of the Royal Society of New Zealand, 45:2, 83-88.
+DOI: 10.1080/03036758.2015.1011171</p>
+<p>Kana, F. and Tamatea, K. (2006). Sharing, listening, learning and developing understandings of Kaupapa Māori research by engaging with two Māori communities involved in education. Waikato Journal of Education, 12, 9-20. <a href="https://researchcommons.waikato.ac.nz/bitstream/handle/10289/6198/Kana%20Sharing.pdf?sequence=3&amp;isAllowed=y" class="uri">https://researchcommons.waikato.ac.nz/bitstream/handle/10289/6198/Kana%20Sharing.pdf?sequence=3&amp;isAllowed=y</a></p>
+<p>Macfarlane, S., Macfarlane, A. and Gillon, G. (2015) Sharing the food baskets of knowledge: Creating space for a blending of streams. In A. Macfarlane, S. Macfarlane, M. Webber, (eds.), Sociocultural realities: Exploring new horizons. Christchurch: Canterbury University Press, 52-67.</p>
+<p>Moewaka Barnes, H. (2006). Transforming Science: How our Structures Limit Innovation. Social Policy Journal of New Zealand Te Puna Whakaaro, 29, 1-16. <a href="https://www.msd.govt.nz/documents/about-msd-and-our-work/publications-resources/journals-and-magazines/social-policy-journal/spj29/29-pages-1-16.pdf" class="uri">https://www.msd.govt.nz/documents/about-msd-and-our-work/publications-resources/journals-and-magazines/social-policy-journal/spj29/29-pages-1-16.pdf</a></p>
+<p>Pihama, L., Tiakiwai, S.-J., and Southey, K. (eds.). (2015). Kaupapa rangahau: A reader. A collection of readings from the Kaupapa Rangahau workshops series. (2nd ed.). Hamilton, New Zealand: Te Kotahi Research Institute. <a href="https://researchcommons.waikato.ac.nz/bitstream/handle/10289/11738/Kaupapa%20Rangahau%20-%20A%20Reader_2nd%20Edition.pdf?sequence=7&amp;isAllowed=y" class="uri">https://researchcommons.waikato.ac.nz/bitstream/handle/10289/11738/Kaupapa%20Rangahau%20-%20A%20Reader_2nd%20Edition.pdf?sequence=7&amp;isAllowed=y</a></p>
+<p>Smith, L. T., Maxwell, T. K., Puke, H., and Temara, P. (2016). Indigenous knowledge, methodology and mayhem: What is the role of methodology in producing indigenous insights? A discussion from Mātauranga Māori. Knowledge Cultures, 4(3), 131–156.</p>
+<h2 id="criteria-for-evaluating-the-eoi-and-long-grant-proposals">Criteria for evaluating the EOI and long grant proposals</h2>
 <p>(Adapted from the RSNZ Marsden)</p>
 <p>Proposal must be on a topic in the cultuaral psychology</p>
-<p>Proposals must use an interdisciplinary approach to significantly
-expand research possibilities and ambition through new researcher and
-institutional links.</p>
-<p>Proposals must have the potential for significant scholarly impact
-because of the proposal’s novelty, originality, insight and ambition.
-Scholarly impact is a demonstrable contribution to shifting
-understanding and advancing methods, theory and application across and
-within disciplines.</p>
-<p>Proposals must be rigorous, and should have a basis in prior research
-and use a sound research method.</p>
-<p>Where relevant to the proposal: * Proposals should consider the
-relation of the research to the themes of Vision Mātauranga and, where
-relevant, how the project will engage with Māori.</p>
+<p>Proposals must use an interdisciplinary approach to significantly expand research possibilities and ambition through new researcher and institutional links.</p>
+<p>Proposals must have the potential for significant scholarly impact because of the proposal’s novelty, originality, insight and ambition. Scholarly impact is a demonstrable contribution to shifting understanding and advancing methods, theory and application across and within disciplines.</p>
+<p>Proposals must be rigorous, and should have a basis in prior research and use a sound research method.</p>
+<p>Where relevant to the proposal:
+* Proposals should consider the relation of the research to the themes of Vision Mātauranga and, where relevant, how the project will engage with Māori.</p>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -20,6 +20,7 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -459,8 +460,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -789,6 +790,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -829,9 +831,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     display: none !important;
   }
 
+  hr.section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0px;
+  }
+
+
+  d-byline {
+    border-top: none;
+  }
+
   d-article {
     padding-top: 2.5rem;
     padding-bottom: 30px;
+    border-top: none;
   }
 
   d-appendix {
@@ -926,6 +940,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article div.sourceCode pre {
     padding-left: 18px;
     font-size: 14px;
+  }
+
+  /* tweak for Pandoc numbered line within distill */
+  d-article pre.numberSource code > span {
+      left: -2em;
   }
 
   d-article pre {
@@ -1687,6 +1706,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // create d-title
     $('.d-title').changeElementType('d-title');
 
+    // separator
+    var separator = '<hr class="section-separator" style="clear: both"/>';
+    // prepend separator above appendix
+    $('.d-byline').before(separator);
+    $('.d-article').before(separator);
+
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
@@ -1764,8 +1789,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     $('.distill-force-highlighting-css').parent().remove();
 
     // remove empty line numbers inserted by pandoc when using a
-    // custom syntax highlighting theme
-    $('code.sourceCode a:empty').remove();
+    // custom syntax highlighting theme, except when numbering line
+    // in code chunk
+    $('pre:not(.numberLines) code.sourceCode a:empty').remove();
 
     // load distill framework
     load_distill_framework();
@@ -1791,12 +1817,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       // add orcid ids
       $('.authors-affiliations').find('.author').each(function(i, el) {
         var orcid_id = front_matter.authors[i].orcidID;
+        var author_name = front_matter.authors[i].author
         if (orcid_id) {
           var a = $('<a></a>');
           a.attr('href', 'https://orcid.org/' + orcid_id);
           var img = $('<img></img>');
           img.addClass('orcid-id');
-          img.attr('alt', 'ORCID ID');
+          img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
           img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
           a.append(img);
           $(this).append(a);
@@ -1861,15 +1888,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2068,7 +2101,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2125,16 +2158,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-title">
 <h1>VUW Psych 423: Culture and Social Behaviour</h1>
+
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
 </div>
 
 <div class="d-byline">
-  Joseph Bulbulia <a href="https://josephbulbulia.netlify.app"
-class="uri">https://josephbulbulia.netlify.app</a> (Victoria University
-of Wellington)<a href="https://www.wgtn.ac.nz"
-class="uri">https://www.wgtn.ac.nz</a>
+  Joseph Bulbulia <a href="https://josephbulbulia.netlify.app" class="uri">https://josephbulbulia.netlify.app</a> (Victoria University of Wellington)<a href="https://www.wgtn.ac.nz" class="uri">https://www.wgtn.ac.nz</a>
   
 
 </div>
@@ -2144,357 +2175,154 @@ class="uri">https://www.wgtn.ac.nz</a>
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#class-times-and-locations"
-id="toc-class-times-and-locations">Class times and locations</a></li>
-<li><a href="#names-and-contact-details"
-id="toc-names-and-contact-details">Names and contact details</a></li>
-<li><a href="#course-description" id="toc-course-description">Course
-Description</a></li>
+<li><a href="#class-times-and-locations" id="toc-class-times-and-locations">Class times and locations</a></li>
+<li><a href="#names-and-contact-details" id="toc-names-and-contact-details">Names and contact details</a></li>
+<li><a href="#course-description" id="toc-course-description">Course Description</a></li>
 <li><a href="#assessments" id="toc-assessments">Assessments</a></li>
-<li><a href="#religion-as-a-window-into-culture-and-behaviour"
-id="toc-religion-as-a-window-into-culture-and-behaviour">Religion as a
-Window into Culture and Behaviour</a></li>
-<li><a href="#communication-of-additional-information-and-submissions"
-id="toc-communication-of-additional-information-and-submissions">Communication
-of additional information and submissions</a></li>
-<li><a href="#important-dates" id="toc-important-dates">Important
-dates</a></li>
-<li><a href="#teaching-format" id="toc-teaching-format">Teaching
-Format</a></li>
-<li><a href="#mandatory-course-requirements"
-id="toc-mandatory-course-requirements">Mandatory course
-requirements</a></li>
+<li><a href="#religion-as-a-window-into-culture-and-behaviour" id="toc-religion-as-a-window-into-culture-and-behaviour">Religion as a Window into Culture and Behaviour</a></li>
+<li><a href="#communication-of-additional-information-and-submissions" id="toc-communication-of-additional-information-and-submissions">Communication of additional information and submissions</a></li>
+<li><a href="#important-dates" id="toc-important-dates">Important dates</a></li>
+<li><a href="#teaching-format" id="toc-teaching-format">Teaching Format</a></li>
+<li><a href="#mandatory-course-requirements" id="toc-mandatory-course-requirements">Mandatory course requirements</a></li>
 <li><a href="#workload" id="toc-workload">Workload</a></li>
 <li><a href="#penalties" id="toc-penalties">Penalties</a></li>
-<li><a href="#materials-and-equipment-andor-additional-expenses"
-id="toc-materials-and-equipment-andor-additional-expenses">Materials and
-equipment and/or additional expenses</a></li>
-<li><a href="#recommended-reading"
-id="toc-recommended-reading">Recommended reading</a></li>
-<li><a href="#other-important-information"
-id="toc-other-important-information">Other important
-information</a></li>
-<li><a href="#topics-and-readings" id="toc-topics-and-readings">Topics
-and Readings</a></li>
-<li><a href="#week-1-overview" id="toc-week-1-overview">Week 1:
-Overview</a></li>
-<li><a href="#week-2-evolutionary-psychology"
-id="toc-week-2-evolutionary-psychology">Week 2: Evolutionary
-Psychology</a></li>
-<li><a href="#week-3-development" id="toc-week-3-development">Week 3
-Development</a></li>
-<li><a href="#week-4-evolution-of-sacrifice"
-id="toc-week-4-evolution-of-sacrifice">Week 4: Evolution of
-sacrifice</a></li>
-<li><a href="#week-5-rituals-in-context"
-id="toc-week-5-rituals-in-context">Week 5: Rituals in context</a></li>
-<li><a href="#week-6-cultural-evolution-of-religions-in-the-pacific"
-id="toc-week-6-cultural-evolution-of-religions-in-the-pacific">Week 6:
-Cultural evolution of religions in the Pacific</a></li>
-<li><a href="#week-7-religion-as-a-reproductive-strategy"
-id="toc-week-7-religion-as-a-reproductive-strategy">Week 7: Religion as
-a reproductive strategy</a></li>
-<li><a href="#week-8-gods-and-minds-in-cultural-context"
-id="toc-week-8-gods-and-minds-in-cultural-context">Week 8: Gods and
-minds in cultural context</a></li>
-<li><a href="#week-9-atheism" id="toc-week-9-atheism">Week 9:
-Atheism</a></li>
-<li><a href="#week-10-ecology-and-beliefs"
-id="toc-week-10-ecology-and-beliefs">Week 10: Ecology and
-Beliefs</a></li>
-<li><a href="#week-11-religious-variation-in-new-zealand"
-id="toc-week-11-religious-variation-in-new-zealand">Week 11: Religious
-variation in New Zealand</a></li>
-<li><a href="#week-12-course-wrap-up"
-id="toc-week-12-course-wrap-up">Week 12 Course wrap up</a></li>
+<li><a href="#materials-and-equipment-andor-additional-expenses" id="toc-materials-and-equipment-andor-additional-expenses">Materials and equipment and/or additional expenses</a></li>
+<li><a href="#recommended-reading" id="toc-recommended-reading">Recommended reading</a></li>
+<li><a href="#other-important-information" id="toc-other-important-information">Other important information</a></li>
+<li><a href="#topics-and-readings" id="toc-topics-and-readings">Topics and Readings</a></li>
+<li><a href="#week-1-overview" id="toc-week-1-overview">Week 1: Overview</a></li>
+<li><a href="#week-2-evolutionary-psychology" id="toc-week-2-evolutionary-psychology">Week 2: Evolutionary Psychology</a></li>
+<li><a href="#week-3-development" id="toc-week-3-development">Week 3 Development</a></li>
+<li><a href="#week-4-evolution-of-sacrifice" id="toc-week-4-evolution-of-sacrifice">Week 4: Evolution of sacrifice</a></li>
+<li><a href="#week-5-rituals-in-context" id="toc-week-5-rituals-in-context">Week 5: Rituals in context</a></li>
+<li><a href="#week-6-cultural-evolution-of-religions-in-the-pacific" id="toc-week-6-cultural-evolution-of-religions-in-the-pacific">Week 6: Cultural evolution of religions in the Pacific</a></li>
+<li><a href="#week-7-religion-as-a-reproductive-strategy" id="toc-week-7-religion-as-a-reproductive-strategy">Week 7: Religion as a reproductive strategy</a></li>
+<li><a href="#week-8-gods-and-minds-in-cultural-context" id="toc-week-8-gods-and-minds-in-cultural-context">Week 8: Gods and minds in cultural context</a></li>
+<li><a href="#week-9-atheism" id="toc-week-9-atheism">Week 9: Atheism</a></li>
+<li><a href="#week-10-ecology-and-beliefs" id="toc-week-10-ecology-and-beliefs">Week 10: Ecology and Beliefs</a></li>
+<li><a href="#week-11-religious-variation-in-new-zealand" id="toc-week-11-religious-variation-in-new-zealand">Week 11: Religious variation in New Zealand</a></li>
+<li><a href="#week-12-course-wrap-up" id="toc-week-12-course-wrap-up">Week 12 Course wrap up</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="class-times-and-locations">Class times and locations</h2>
 <p>Thursdays: 9 AM in EA407 (Semester 1, 2021)</p>
 <h2 id="names-and-contact-details">Names and contact details</h2>
-<p>Course coordinator &amp; Lecturer: Prof. Joseph Bulbulia Email: <a
-href="mailto:joseph.bulbulia@vuw.ac.nz"
-class="email">joseph.bulbulia@vuw.ac.nz</a></p>
-<p>Course admin support: Dr. Jiun Youn (Extension, technical issues and
-other housekeeping matters) Email: <a href="mailto:jiun.youn@vuw.ac.nz"
-class="email">jiun.youn@vuw.ac.nz</a></p>
+<p>Course coordinator &amp; Lecturer: Prof. Joseph Bulbulia
+Email: <a href="mailto:joseph.bulbulia@vuw.ac.nz" class="email">joseph.bulbulia@vuw.ac.nz</a></p>
+<p>Course admin support: Dr. Jiun Youn
+(Extension, technical issues and other housekeeping matters)
+Email: <a href="mailto:jiun.youn@vuw.ac.nz" class="email">jiun.youn@vuw.ac.nz</a></p>
 <h2 id="course-description">Course Description</h2>
-<p>This course examines social psychology from a cross-cultural
-perspective. To what extent is social behaviour different or the same
-across the world? What theories can we use to understand the thoughts,
-feelings, actions, and beliefs of people across cultures? Emphasis is on
-such basic social processes as construction of identity and personality,
-dimensions of cultural variation, and intergroup harmony and conflict.
-Issues towards developing cross-cultural competence are considered, with
-an eye towards establishing better practices for the evolving population
-of Aotearoa/New Zealand.</p>
+<p>This course examines social psychology from a cross-cultural perspective. To what extent is social behaviour different or the same across the world? What theories can we use to understand the thoughts, feelings, actions, and beliefs of people across cultures? Emphasis is on such basic social processes as construction of identity and personality, dimensions of cultural variation, and intergroup harmony and conflict. Issues towards developing cross-cultural competence are considered, with an eye towards establishing better practices for the evolving population of Aotearoa/New Zealand.</p>
 <h2 id="assessments">Assessments</h2>
-<p>See: <a
-href="https://go-bayes.github.io/psych-423/assessments.html">Assessments</a></p>
-<h2 id="religion-as-a-window-into-culture-and-behaviour">Religion as a
-Window into Culture and Behaviour</h2>
-<p>This year, we will use religion as a window through which to view
-patterns of cultural variation and similarity.</p>
-<p>From the healing rituals of the Kung people in southern Africa, to
-the human sacrificial rituals of the Aztecs, to the liberating speeches
-of Martin Luther King, human spirituality is both diverse and powerful.
-What explains the near universality of religion? What explains its
-diversity of forms? Are religions like typewriters, once useful but now
-obsolete? Or will religions remain vital for humanity’s future. Here, we
-investigate these questions from the perspective of <em>cultural
-evolution</em>.</p>
-<p><a href="https://uoa-eresearch.github.io/religion/churches.html">See
-our church_Map</a></p>
-<h2
-id="communication-of-additional-information-and-submissions">Communication
-of additional information and submissions</h2>
-<p>Lectures will be posted to: <a
-href="https://go-bayes.github.io/psych-423/"
-class="uri">https://go-bayes.github.io/psych-423/</a></p>
+<p>See: <a href="https://go-bayes.github.io/psych-423/assessments.html">Assessments</a></p>
+<h2 id="religion-as-a-window-into-culture-and-behaviour">Religion as a Window into Culture and Behaviour</h2>
+<p>This year, we will use religion as a window through which to view patterns of cultural variation and similarity.</p>
+<p>From the healing rituals of the Kung people in southern Africa, to the human sacrificial rituals of the Aztecs, to the liberating speeches of Martin Luther King, human spirituality is both diverse and powerful. What explains the near universality of religion? What explains its diversity of forms? Are religions like typewriters, once useful but now obsolete? Or will religions remain vital for humanity’s future. Here, we investigate these questions from the perspective of <em>cultural evolution</em>.</p>
+<p><a href="https://uoa-eresearch.github.io/religion/churches.html">See our church_Map</a></p>
+<h2 id="communication-of-additional-information-and-submissions">Communication of additional information and submissions</h2>
+<p>Lectures will be posted to: <a href="https://go-bayes.github.io/psych-423/" class="uri">https://go-bayes.github.io/psych-423/</a></p>
 <p>Course-Related notices will appear on VUW Blackboard</p>
-<p>Any information relating to Psyc 423 or any last-minute changes to
-the course will be posted on Blackboard.</p>
+<p>Any information relating to Psyc 423 or any last-minute changes to the course will be posted on Blackboard.</p>
 <p>Students must submit all written work to VUW Blackboard.</p>
 <h2 id="important-dates">Important dates</h2>
-<p>Trimester dates: 22 February to 20 June Teaching dates: 22 February
-to 28 May</p>
+<p>Trimester dates: 22 February to 20 June
+Teaching dates: 22 February to 28 May</p>
 <p>Mid-trimester break: 5 April to 18 April</p>
-<p>Last assessment item due: Final assessment (research proposal) will
-need to be submitted on 31st May see: <a
-href="https://go-bayes.github.io/psych-423/assessments.html">Assessments</a></p>
-<p>Study Examination/Assessment Period: Note: students who enrol in
-courses with examinations must be able to attend an examination at the
-University at any time during the scheduled examination period.
-Withdrawal dates: Refer to <a
-href="www.victoria.ac.nz/home/admisenrol/payments/withdrawalsrefunds">Withdrawing</a>
-If you cannot complete an assignment or sit a test or examination
-(aegrotats), refer to <a
-href="www.victoria.ac.nz/home/study/exams-and-assessments/aegrotat">Aegrotats</a></p>
+<p>Last assessment item due: Final assessment (research proposal) will need to be submitted on 31st May see: <a href="https://go-bayes.github.io/psych-423/assessments.html">Assessments</a></p>
+<p>Study Examination/Assessment Period:
+Note: students who enrol in courses with examinations must be able to attend an examination at the University at any time during the scheduled examination period.
+Withdrawal dates: Refer to <a href="www.victoria.ac.nz/home/admisenrol/payments/withdrawalsrefunds">Withdrawing</a>
+If you cannot complete an assignment or sit a test or examination (aegrotats), refer to <a href="www.victoria.ac.nz/home/study/exams-and-assessments/aegrotat">Aegrotats</a></p>
 <h2 id="teaching-format">Teaching Format</h2>
-<p>Psyc423 is a 15pt course which represents approx. 150 hours of total
-work for an average student.</p>
+<p>Psyc423 is a 15pt course which represents approx. 150 hours of total work for an average student.</p>
 <p>In-class time involves (approx. 22hrs):</p>
 <ol type="1">
-<li><p>Lectures by academic staff (typically Bulbulia): Lectures will
-introducing basic areas of knowledge, and will supplement the
-readings.</p></li>
-<li><p>Class discussions. I expect students to read the assigned
-articles for the relevant week. To receive participation credit,
-students must attent seminar and submit a brief (~100 word) account of a
-thought, question, or insight that occurred to them during the class
-discussion.</p></li>
-<li><p>The reports and “grant” assessments are described in <a
-href="https://go-bayes.github.io/psych-423/assessments.html">Assessments</a>)</p></li>
+<li><p>Lectures by academic staff (typically Bulbulia): Lectures will introducing basic areas of knowledge, and will supplement the readings.</p></li>
+<li><p>Class discussions. I expect students to read the assigned articles for the relevant week. To receive participation credit, students must attent seminar and submit a brief (~100 word) account of a thought, question, or insight that occurred to them during the class discussion.</p></li>
+<li><p>The reports and “grant” assessments are described in <a href="https://go-bayes.github.io/psych-423/assessments.html">Assessments</a>)</p></li>
 <li><p>Note: this course has no tests or examinations.</p></li>
 </ol>
 <p>Out-of-class time involves (approx. 128hrs):</p>
 <ol type="1">
 <li>Reading articles before &amp; following class.</li>
-<li>Reading materials for the student presentations and writing response
-papers.</li>
+<li>Reading materials for the student presentations and writing response papers.</li>
 <li>Research project readings &amp; preparation</li>
 <li>Research proposal writing</li>
 </ol>
-<h2 id="mandatory-course-requirements">Mandatory course
-requirements</h2>
+<h2 id="mandatory-course-requirements">Mandatory course requirements</h2>
 <p>There are no Mandatory course requirements.</p>
 <h2 id="workload">Workload</h2>
-<p>Given that Psyc 423 is a 15 point course, the expected workload is no
-less than 150 hours in total. This would mean roughly 15 hours per week.
-This should be viewed as a minimum - how much you get out of this course
-will depend on the work you put in.</p>
+<p>Given that Psyc 423 is a 15 point course, the expected workload is no less than 150 hours in total. This would mean roughly 15 hours per week. This should be viewed as a minimum - how much you get out of this course will depend on the work you put in.</p>
 <h2 id="penalties">Penalties</h2>
-<p>Students must turn in all assignments on time by due dates. If
-students do not turn in an essay or assignment at a designated time,
-they will receive a zero for assignment this will be counted toward the
-final grade.</p>
-<h2 id="materials-and-equipment-andor-additional-expenses">Materials and
-equipment and/or additional expenses</h2>
+<p>Students must turn in all assignments on time by due dates. If students do not turn in an essay or assignment at a designated time, they will receive a zero for assignment this will be counted toward the final grade.</p>
+<h2 id="materials-and-equipment-andor-additional-expenses">Materials and equipment and/or additional expenses</h2>
 <p>You will not be needing any additional equipment or materials.</p>
 <h2 id="recommended-reading">Recommended reading</h2>
-<p>Most of the material students will be expected to read is published
-in journals and to some extent in books. Students will need to read
-between two and five articles per week. Set readings will mostly be
-supplied throughout the course (please check relevant week in
-BlackBoard). However, students will also be required to conduct their
-own independent reviews of the literature for assignment purposes.</p>
+<p>Most of the material students will be expected to read is published in journals and to some extent in books. Students will need to read between two and five articles per week. Set readings will mostly be supplied throughout the course (please check relevant week in BlackBoard). However, students will also be required to conduct their own independent reviews of the literature for assignment purposes.</p>
 <h2 id="other-important-information">Other important information</h2>
-<p>The information above is specific to this course. There is other
-important information that students must familiarise themselves with,
-including:</p>
+<p>The information above is specific to this course. There is other important information that students must familiarise themselves with, including:</p>
 <ul>
-<li><p><a
-href="https://www.wgtn.ac.nz/students/support/student-interest-and-conflict-resolution/academic-integrity">Academic
-Integrity/Plagiarism</a></p></li>
-<li><p><a
-href="https://www.victoria.ac.nz/students/study/progress/academic-progess">Academic
-Progress</a></p></li>
-<li><p><a href="https://www.victoria.ac.nz/students/study/dates">Dates
-and deadlines</a></p></li>
-<li><p><a
-href="https://www.victoria.ac.nz/science/student-administration">Faculty
-of Science Student and Academic Services Office</a></p></li>
-<li><p><a
-href="https://www.victoria.ac.nz/students/study/progress/grades">Grades</a></p></li>
-<li><p>Special passes Refer to the <a
-href="https://www.victoria.ac.nz/documents/policy/staff-policy/assessment-handbook.pdf">Assessment
-Handbook</a></p></li>
-<li><p><a
-href="https://www.victoria.ac.nz/about/governance/strategy">Statutes and
-policies</a></p></li>
-<li><p><a href="https://www.victoria.ac.nz/students/support">Student
-support</a></p></li>
-<li><p><a
-href="https://www.victoria.ac.nz/st_services/disability/">Students with
-disabilities</a></p></li>
-<li><p><a
-href="https://www.wgtn.ac.nz/learning-teaching/partnership/student-charter">Student
-Charter</a></p></li>
-<li><p><a
-href="https://www.wgtn.ac.nz/study/apply-enrol/terms-conditions/student-contract">Terms
-and Conditions</a></p></li>
-<li><p><a
-href="https://www.cad.vuw.ac.nz/wiki/index.php/Turnitin">Turnitin</a></p></li>
-<li><p><a
-href="https://www.victoria.ac.nz/about/governance/structure">University
-structure</a></p></li>
+<li><p><a href="https://www.wgtn.ac.nz/students/support/student-interest-and-conflict-resolution/academic-integrity">Academic Integrity/Plagiarism</a></p></li>
+<li><p><a href="https://www.victoria.ac.nz/students/study/progress/academic-progess">Academic Progress</a></p></li>
+<li><p><a href="https://www.victoria.ac.nz/students/study/dates">Dates and deadlines</a></p></li>
+<li><p><a href="https://www.victoria.ac.nz/science/student-administration">Faculty of Science Student and Academic Services Office</a></p></li>
+<li><p><a href="https://www.victoria.ac.nz/students/study/progress/grades">Grades</a></p></li>
+<li><p>Special passes Refer to the <a href="https://www.victoria.ac.nz/documents/policy/staff-policy/assessment-handbook.pdf">Assessment Handbook</a></p></li>
+<li><p><a href="https://www.victoria.ac.nz/about/governance/strategy">Statutes and policies</a></p></li>
+<li><p><a href="https://www.victoria.ac.nz/students/support">Student support</a></p></li>
+<li><p><a href="https://www.victoria.ac.nz/st_services/disability/">Students with disabilities</a></p></li>
+<li><p><a href="https://www.wgtn.ac.nz/learning-teaching/partnership/student-charter">Student Charter</a></p></li>
+<li><p><a href="https://www.wgtn.ac.nz/study/apply-enrol/terms-conditions/student-contract">Terms and Conditions</a></p></li>
+<li><p><a href="https://www.cad.vuw.ac.nz/wiki/index.php/Turnitin">Turnitin</a></p></li>
+<li><p><a href="https://www.victoria.ac.nz/about/governance/structure">University structure</a></p></li>
 <li><p><a href="https://www.vuwsa.org.nz">VUWSA</a></p></li>
 </ul>
 <h2 id="topics-and-readings">Topics and Readings</h2>
 <h2 id="week-1-overview">Week 1: Overview</h2>
-<h2 id="week-2-evolutionary-psychology">Week 2: Evolutionary
-Psychology</h2>
-<p>Cosmides, Leda, and John Tooby. “Evolutionary psychology: A primer.”
-(1997). <a href="http://www.cep.ucsb.edu/primer.html">Website:</a></p>
-<p>Steven Mithen’s very brief review from an archaeological perspective
-(3 pages): Mithen, S. (1997). The Adapted Mind: Evolutionary Psychology
-and the Generation of Culture.<a
-href="https://www.dropbox.com/s/7wbd688uyfp0cu2/Mithen-1997_Reviewed-Work-The-Adapted-Mind-Evolutionary-Psychology.pdf?dl=0">PDF</a></p>
-<p>Guthrie, Stewart. “Spiritual beings: A Darwinian, cognitive account.”
-Bulbulia et al., eds., Evolution of Religion (2008): 239-245. <a
-href="https://www.dropbox.com/s/8xn1tnm0vqizdar/Guthrie2008.pdf?dl=0">PDF</a></p>
+<h2 id="week-2-evolutionary-psychology">Week 2: Evolutionary Psychology</h2>
+<p>Cosmides, Leda, and John Tooby. “Evolutionary psychology: A primer.” (1997).
+<a href="http://www.cep.ucsb.edu/primer.html">Website:</a></p>
+<p>Steven Mithen’s very brief review from an archaeological perspective (3 pages): Mithen, S. (1997). The Adapted Mind: Evolutionary Psychology and the Generation of Culture.<a href="https://www.dropbox.com/s/7wbd688uyfp0cu2/Mithen-1997_Reviewed-Work-The-Adapted-Mind-Evolutionary-Psychology.pdf?dl=0">PDF</a></p>
+<p>Guthrie, Stewart. “Spiritual beings: A Darwinian, cognitive account.” Bulbulia et al., eds., Evolution of Religion (2008): 239-245. <a href="https://www.dropbox.com/s/8xn1tnm0vqizdar/Guthrie2008.pdf?dl=0">PDF</a></p>
 <h2 id="week-3-development">Week 3 Development</h2>
-<p>Kelemen, Deborah. “Are children “intuitive theists”? Reasoning about
-purpose and design in nature.” Psychological Science 15, no. 5 (2004):
-295-301. <a
-href="https://www.dropbox.com/s/31kvfyx9jxkypnr/2004.KELEMEN.INTUITIVE.THEISM.pdf?dl=0">PDF</a></p>
-<p>Harris, Paul L., and Melissa A. Koenig. “Trust in testimony: How
-children learn about science and religion.” Child development 77, no. 3
-(2006): 505-524. <a
-href="https://www.dropbox.com/s/e3bttnc142wgbvz/Harris_et_al-2006-Child_Development.pdf?dl=0">PDF</a></p>
-<p>Bloom, P. (2007). Religion is natural. Developmental science, 10(1),
-147-151. <a
-href="https://www.dropbox.com/s/mwke5mgtqmzneoy/BLOOM_Religion.pdf?dl=0">PDF</a></p>
-<h2 id="week-4-evolution-of-sacrifice">Week 4: Evolution of
-sacrifice</h2>
-<p>Bulbulia, Joseph. “Religious costs as adaptations that signal
-altruistic intention.” Evolution and Cognition 10, no. 1 (2004): 19-38.
-<a
-href="https://www.dropbox.com/s/whqhjrdk0od18lp/COSTSADAPT.pdf?dl=0">PDF</a></p>
-<p>Sosis, R., &amp; Bressler, E. R. (2003). Cooperation and commune
-longevity: A test of the costly signalling theory of religion.
-Cross-cultural research, 37(2), 211-239. <a
-href="https://www.dropbox.com/s/22t4mw5mg3l5kc2/Sosis-Bressler-2003_Cooperation-and-commune-longetivity.pdf?dl=0">PDF</a></p>
-<p>Sosis, R., Kress, H. C., &amp; Boster, J. S. (2007). Scars for war:
-Evaluating alternative signaling explanations for cross-cultural
-variance in ritual costs. Evolution and Human Behavior, 28(4), 234-247.
-<a
-href="https://www.dropbox.com/s/i6c978wgm8y4x7j/2007-Scars-for-War.pdf?dl=0">PDF</a></p>
-<p>Sosis, R. (2009). The adaptationist-byproduct debate on the evolution
-of religion: Five misunderstandings of the adaptationist program.
-Journal of Cognition and Culture, 9(3-4), 315-332. <a
-href="https://www.dropbox.com/s/p693bdwirsuno7s/Sosis-2009_The-Adaptationist-Byproduct-Debate-on-the-Evolution-of-Religion.pdf?dl=0">PDF</a></p>
+<p>Kelemen, Deborah. “Are children “intuitive theists”? Reasoning about purpose and design in nature.” Psychological Science 15, no. 5 (2004): 295-301. <a href="https://www.dropbox.com/s/31kvfyx9jxkypnr/2004.KELEMEN.INTUITIVE.THEISM.pdf?dl=0">PDF</a></p>
+<p>Harris, Paul L., and Melissa A. Koenig. “Trust in testimony: How children learn about science and religion.” Child development 77, no. 3 (2006): 505-524. <a href="https://www.dropbox.com/s/e3bttnc142wgbvz/Harris_et_al-2006-Child_Development.pdf?dl=0">PDF</a></p>
+<p>Bloom, P. (2007). Religion is natural. Developmental science, 10(1), 147-151.
+<a href="https://www.dropbox.com/s/mwke5mgtqmzneoy/BLOOM_Religion.pdf?dl=0">PDF</a></p>
+<h2 id="week-4-evolution-of-sacrifice">Week 4: Evolution of sacrifice</h2>
+<p>Bulbulia, Joseph. “Religious costs as adaptations that signal altruistic intention.” Evolution and Cognition 10, no. 1 (2004): 19-38. <a href="https://www.dropbox.com/s/whqhjrdk0od18lp/COSTSADAPT.pdf?dl=0">PDF</a></p>
+<p>Sosis, R., &amp; Bressler, E. R. (2003). Cooperation and commune longevity: A test of the costly signalling theory of religion. Cross-cultural research, 37(2), 211-239. <a href="https://www.dropbox.com/s/22t4mw5mg3l5kc2/Sosis-Bressler-2003_Cooperation-and-commune-longetivity.pdf?dl=0">PDF</a></p>
+<p>Sosis, R., Kress, H. C., &amp; Boster, J. S. (2007). Scars for war: Evaluating alternative signaling explanations for cross-cultural variance in ritual costs. Evolution and Human Behavior, 28(4), 234-247. <a href="https://www.dropbox.com/s/i6c978wgm8y4x7j/2007-Scars-for-War.pdf?dl=0">PDF</a></p>
+<p>Sosis, R. (2009). The adaptationist-byproduct debate on the evolution of religion: Five misunderstandings of the adaptationist program. Journal of Cognition and Culture, 9(3-4), 315-332. <a href="https://www.dropbox.com/s/p693bdwirsuno7s/Sosis-2009_The-Adaptationist-Byproduct-Debate-on-the-Evolution-of-Religion.pdf?dl=0">PDF</a></p>
 <h2 id="week-5-rituals-in-context">Week 5: Rituals in context</h2>
-<p>Konvalinka, I., Xygalatas, D., Bulbulia, J., Schjødt, U., Jegindø, E.
-M., Wallot, S., … &amp; Roepstorff, A. (2011). Synchronized arousal
-between performers and related spectators in a fire-walking ritual.
-Proceedings of the National Academy of Sciences, 108(20), 8514-8519. <a
-href="https://www.pnas.org/content/108/20/8514">PDF</a></p>
-<p>Xygalatas, P. Mitkidis, R. Fischer, P. Reddish, J. Skewes, A. W.
-Geertz, A. Roepstorff, and J. Bulbulia. Extreme rituals promote
-prosociality. Psychological Science, 2013 <a
-href="https://www.dropbox.com/s/zkp3eijrb0syh3t/Psychological%20Science-2013-Xygalatas-0956797612472910.pdf?dl=0">PDF</a></p>
-<p>Power, E. A. (2018). Collective ritual and social support networks in
-rural South India. Proceedings of the Royal Society B: Biological
-Sciences, 285(1879), 20180023.<a
-href="https://www.dropbox.com/s/ud27zvxn6ui2g3d/Power-2018_Collective-ritual-and-social-support.pdf?dl=0">PDF</a></p>
-<h2 id="week-6-cultural-evolution-of-religions-in-the-pacific">Week 6:
-Cultural evolution of religions in the Pacific</h2>
-<p>Bulbulia, J., Geertz, A., Atkinson, Q., Cohen, E., Evans, N.,
-Francois, P., … &amp; Wilson, D. (2013). The cultural evolution of
-religion. Cultural evolution: Society, technology, language, and
-religion. Vol. 12. MIT Press, 2013. <a
-href="https://www.dropbox.com/s/l3u5pxeam6f79xf/Bulbulia-etal-2013_The-Cultural-Evolution-of-Religion.pdf?dl=0">PDF</a></p>
-<p>Watts, J., Sheehan, O., Bulbulia, J., Gray, R. D., &amp; Atkinson, Q.
-D. (2018). Christianity spread faster in small, politically structured
-societies. Nature human behaviour, 2(8), 559-564.<a
-href="https://www.nature.com/articles/s41562-018-0379-3">link</a></p>
-<p>Watts, J., Sheehan, O., Atkinson, Q. D., Bulbulia, J., &amp; Gray, R.
-D. (2016). Ritual human sacrifice promoted and sustained the evolution
-of stratified societies. Nature, 532(7598), 228. <a
-href="https://www.nature.com/articles/nature17159">link</a></p>
-<h2 id="week-7-religion-as-a-reproductive-strategy">Week 7: Religion as
-a reproductive strategy</h2>
-<p>Weeden, J., Cohen, A. B., &amp; Kenrick, D. T. (2008). Religious
-attendance as reproductive support. Evolution and Human Behavior, 29(5),
-327-334. <a
-href="https://www.dropbox.com/s/4ci1h4fwlurq5xq/Weeden_Feritility.pdf?dl=0">PDF</a></p>
-<p>Blume, Michael. “The reproductive benefits of religious affiliation.”
-In The biological evolution of religious mind and behavior, pp. 117-126.
-Springer Berlin Heidelberg, 2009. <a
-href="https://www.dropbox.com/s/5yzz4iq8r41mmy7/blume.pdf?dl=0">PDF</a></p>
-<p>Shaver, J. H., Power, E. A., Purzycki, B. G., Watts, J., Sear, R.,
-Shenk, M. K., … &amp; Bulbulia, J. A. (2020). Church attendance and
-alloparenting: an analysis of fertility, social support and child
-development among English mothers. Philosophical Transactions of the
-Royal Society B, 375(1805), 20190428.<a
-href="https://www.dropbox.com/s/3u65392hv0k53hv/Shaver-2020_church-attendance-and-alloparenting.pdf?dl=0">PDF</a></p>
-<h2 id="week-8-gods-and-minds-in-cultural-context">Week 8: Gods and
-minds in cultural context</h2>
-<p>Willard, A. K., &amp; McNamara, R. A. (2019). The minds of god (s)
-and humans: Differences in mind perception in Fiji and North America.
-Cognitive science, 43(1), e12703.<a
-href="https://www.dropbox.com/s/ofawmmozfyog7p2/Rita_Minds_GODS.pdf?dl=0">PDF</a></p>
-<p>Purzycki, B. G., Finkel, D. N., Shaver, J., Wales, N., Cohen, A. B.,
-&amp; Sosis, R. (2012). What does God know? Supernatural agents’ access
-to socially strategic and non‐strategic information. Cognitive Science,
-36(5), 846-869. <a
-href="https://www.dropbox.com/s/gorxdhw7u44bl2e/Shaver_What_GODS_KNOW.pdf?dl=0">PDF</a></p>
+<p>Konvalinka, I., Xygalatas, D., Bulbulia, J., Schjødt, U., Jegindø, E. M., Wallot, S., … &amp; Roepstorff, A. (2011). Synchronized arousal between performers and related spectators in a fire-walking ritual. Proceedings of the National Academy of Sciences, 108(20), 8514-8519. <a href="https://www.pnas.org/content/108/20/8514">PDF</a></p>
+<p>Xygalatas, P. Mitkidis, R. Fischer, P. Reddish, J. Skewes, A. W. Geertz, A. Roepstorff, and J. Bulbulia. Extreme rituals promote prosociality. Psychological Science, 2013 <a href="https://www.dropbox.com/s/zkp3eijrb0syh3t/Psychological%20Science-2013-Xygalatas-0956797612472910.pdf?dl=0">PDF</a></p>
+<p>Power, E. A. (2018). Collective ritual and social support networks in rural South India. Proceedings of the Royal Society B: Biological Sciences, 285(1879), 20180023.<a href="https://www.dropbox.com/s/ud27zvxn6ui2g3d/Power-2018_Collective-ritual-and-social-support.pdf?dl=0">PDF</a></p>
+<h2 id="week-6-cultural-evolution-of-religions-in-the-pacific">Week 6: Cultural evolution of religions in the Pacific</h2>
+<p>Bulbulia, J., Geertz, A., Atkinson, Q., Cohen, E., Evans, N., Francois, P., … &amp; Wilson, D. (2013). The cultural evolution of religion. Cultural evolution: Society, technology, language, and religion. Vol. 12. MIT Press, 2013. <a href="https://www.dropbox.com/s/l3u5pxeam6f79xf/Bulbulia-etal-2013_The-Cultural-Evolution-of-Religion.pdf?dl=0">PDF</a></p>
+<p>Watts, J., Sheehan, O., Bulbulia, J., Gray, R. D., &amp; Atkinson, Q. D. (2018). Christianity spread faster in small, politically structured societies. Nature human behaviour, 2(8), 559-564.<a href="https://www.nature.com/articles/s41562-018-0379-3">link</a></p>
+<p>Watts, J., Sheehan, O., Atkinson, Q. D., Bulbulia, J., &amp; Gray, R. D. (2016). Ritual human sacrifice promoted and sustained the evolution of stratified societies. Nature, 532(7598), 228. <a href="https://www.nature.com/articles/nature17159">link</a></p>
+<h2 id="week-7-religion-as-a-reproductive-strategy">Week 7: Religion as a reproductive strategy</h2>
+<p>Weeden, J., Cohen, A. B., &amp; Kenrick, D. T. (2008). Religious attendance as reproductive support. Evolution and Human Behavior, 29(5), 327-334. <a href="https://www.dropbox.com/s/4ci1h4fwlurq5xq/Weeden_Feritility.pdf?dl=0">PDF</a></p>
+<p>Blume, Michael. “The reproductive benefits of religious affiliation.” In The biological evolution of religious mind and behavior, pp. 117-126. Springer Berlin Heidelberg, 2009. <a href="https://www.dropbox.com/s/5yzz4iq8r41mmy7/blume.pdf?dl=0">PDF</a></p>
+<p>Shaver, J. H., Power, E. A., Purzycki, B. G., Watts, J., Sear, R., Shenk, M. K., … &amp; Bulbulia, J. A. (2020). Church attendance and alloparenting: an analysis of fertility, social support and child development among English mothers. Philosophical Transactions of the Royal Society B, 375(1805), 20190428.<a href="https://www.dropbox.com/s/3u65392hv0k53hv/Shaver-2020_church-attendance-and-alloparenting.pdf?dl=0">PDF</a></p>
+<h2 id="week-8-gods-and-minds-in-cultural-context">Week 8: Gods and minds in cultural context</h2>
+<p>Willard, A. K., &amp; McNamara, R. A. (2019). The minds of god (s) and humans: Differences in mind perception in Fiji and North America. Cognitive science, 43(1), e12703.<a href="https://www.dropbox.com/s/ofawmmozfyog7p2/Rita_Minds_GODS.pdf?dl=0">PDF</a></p>
+<p>Purzycki, B. G., Finkel, D. N., Shaver, J., Wales, N., Cohen, A. B., &amp; Sosis, R. (2012). What does God know? Supernatural agents’ access to socially strategic and non‐strategic information. Cognitive Science, 36(5), 846-869. <a href="https://www.dropbox.com/s/gorxdhw7u44bl2e/Shaver_What_GODS_KNOW.pdf?dl=0">PDF</a></p>
 <h2 id="week-9-atheism">Week 9: Atheism</h2>
-<p>Norenzayan, Ara, and Will M. Gervais. “The origins of religious
-disbelief.” Trends in Cognitive Sciences 17, no. 1 (2013): 20-25. <a
-href="https://www.dropbox.com/s/qjgi3llsgbkpmy7/the-origins-of-religious-disbelief.pdf?dl=0">PDF</a></p>
-<p>Gervais, Will M. 2017. “Global Evidence of Extreme Intuitive Moral
-Prejudice Against Atheists”<a
-href="https://www.nature.com/articles/s41562-017-0151">Link</a></p>
+<p>Norenzayan, Ara, and Will M. Gervais. “The origins of religious disbelief.” Trends in Cognitive Sciences 17, no. 1 (2013): 20-25. <a href="https://www.dropbox.com/s/qjgi3llsgbkpmy7/the-origins-of-religious-disbelief.pdf?dl=0">PDF</a></p>
+<p>Gervais, Will M. 2017. “Global Evidence of Extreme Intuitive Moral Prejudice Against Atheists”<a href="https://www.nature.com/articles/s41562-017-0151">Link</a></p>
 <h2 id="week-10-ecology-and-beliefs">Week 10: Ecology and Beliefs</h2>
-<p>Sibley, Chris G., and Joseph Bulbulia. “Faith after an earthquake: A
-longitudinal study of religion and perceived health before and after the
-2011 Christchurch New Zealand earthquake.” PloS one 7, no. 12 (2012):
-e49648 <a
-href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049648">link</a></p>
-<p>Botero, C. A., Gardner, B., Kirby, K. R., Bulbulia, J., Gavin, M. C.,
-&amp; Gray, R. D. (2014). The ecology of religious beliefs. Proceedings
-of the National Academy of Sciences, 111(47), 16784-16789.<a
-href="https://doi.org/10.1073/pnas.1408701111">link</a></p>
-<h2 id="week-11-religious-variation-in-new-zealand">Week 11: Religious
-variation in New Zealand</h2>
-<p>Wilson, J. Bulbulia, and C. G. Sibley. Differences and similarities
-in religious and paranormal beliefs: a typology of distinct faith
-signatures. Religion, Brain and Behavior, 1–23, 2015 <a
-href="https://www.tandfonline.com/doi/full/10.1080/2153599X.2013.779934">link</a></p>
-<p>Bulbulia, J. A., Troughton, G., Highland, B. R., &amp; Sibley, C. G.
-(2020). A national-scale typology of orientations to religion poses new
-challenges for the cultural evolutionary study of religious groups.
-Religion, Brain &amp; Behavior, 10(3), 239-251.<a
-href="https://doi.org/10.1080/2153599X.2019.1678516">link</a></p>
+<p>Sibley, Chris G., and Joseph Bulbulia. “Faith after an earthquake: A longitudinal study of religion and perceived health before and after the 2011 Christchurch New Zealand earthquake.” PloS one 7, no. 12 (2012): e49648 <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049648">link</a></p>
+<p>Botero, C. A., Gardner, B., Kirby, K. R., Bulbulia, J., Gavin, M. C., &amp; Gray, R. D. (2014). The ecology of religious beliefs. Proceedings of the National Academy of Sciences, 111(47), 16784-16789.<a href="https://doi.org/10.1073/pnas.1408701111">link</a></p>
+<h2 id="week-11-religious-variation-in-new-zealand">Week 11: Religious variation in New Zealand</h2>
+<p>Wilson, J. Bulbulia, and C. G. Sibley. Differences and similarities in religious and paranormal beliefs: a typology of distinct faith signatures. Religion, Brain and Behavior, 1–23, 2015 <a href="https://www.tandfonline.com/doi/full/10.1080/2153599X.2013.779934">link</a></p>
+<p>Bulbulia, J. A., Troughton, G., Highland, B. R., &amp; Sibley, C. G. (2020). A national-scale typology of orientations to religion poses new challenges for the cultural evolutionary study of religious groups. Religion, Brain &amp; Behavior, 10(3), 239-251.<a href="https://doi.org/10.1080/2153599X.2019.1678516">link</a></p>
 <h2 id="week-12-course-wrap-up">Week 12 Course wrap up</h2>
-<p>Mesoudi, A. (2009). How cultural evolutionary theory can inform
-social psychology and vice versa. Psychological review, 116(4), 929. <a
-href="Mesoudi-2009_How-Cultural-Evolutionary-Theory-Can-Inform-Social-Psychology">PDF</a></p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Mesoudi, A. (2009). How cultural evolutionary theory can inform social psychology and vice versa. Psychological review, 116(4), 929. <a href="Mesoudi-2009_How-Cultural-Evolutionary-Theory-Can-Inform-Social-Psychology">PDF</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
